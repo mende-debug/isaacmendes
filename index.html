@@ -6,339 +6,359 @@
 <title>Isaac Mendes — portfólio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #16131f;
-    --ink-soft: #221d33;
-    --ink-line: #35304a;
-    --paper: #faf8f4;
-    --paper-card: #ffffff;
-    --paper-line: #e8e3da;
-    --text: #1d1a26;
-    --text-muted: #6b6479;
-    --violet: #6a4bf2;
-    --violet-bright: #9b82ff;
-    --amber: #d99a3f;
-    --mint: #3fb383;
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface-2: #1c2129;
+    --border: #2d333b;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --green: #3fb950;
+    --green-dim: rgba(63,185,80,0.12);
+    --amber: #d29922;
+    --amber-dim: rgba(210,153,34,0.12);
+    --accent: #58a6ff;
   }
   * { box-sizing: border-box; }
-  html { overflow-x: hidden; }
+  html { overflow-x: hidden; scroll-behavior: smooth; }
   body {
     margin: 0;
     font-family: 'Inter', Arial, sans-serif;
     color: var(--text);
-    background: var(--paper);
+    background: var(--bg);
     line-height: 1.55;
     overflow-x: hidden;
   }
-  h1, h2, h3, .display { font-family: 'Space Grotesk', 'Inter', sans-serif; }
-  .mono { font-family: 'IBM Plex Mono', monospace; }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, .display { font-family: 'Fraunces', 'Inter', serif; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
   a { color: inherit; }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .bubble { animation: rise 0.5s ease both; }
-    .bubble:nth-child(1) { animation-delay: 0.15s; }
-    .bubble:nth-child(2) { animation-delay: 0.55s; }
-    .bubble:nth-child(3) { animation-delay: 1.05s; }
-    .bubble:nth-child(4) { animation-delay: 1.45s; }
-    @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
   }
 
-  /* ---------- ink sections (hero + footer) ---------- */
-  .ink { background: var(--ink); color: #ece9f5; }
-  .ink .text-muted { color: #a49dc0; }
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { animation: rise 0.6s ease both; }
+    .reveal:nth-child(1) { animation-delay: 0.05s; }
+    .reveal:nth-child(2) { animation-delay: 0.35s; }
+    .reveal:nth-child(3) { animation-delay: 0.65s; }
+    .reveal:nth-child(4) { animation-delay: 0.95s; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  }
 
+  /* ---------- nav ---------- */
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 26px 0;
+    padding: 28px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
   }
-  nav .logo {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 19px;
-    letter-spacing: -0.01em;
-    text-decoration: none;
-  }
-  nav .logo .dot { color: var(--violet-bright); }
+  nav .path { color: var(--text); font-weight: 500; }
+  nav .path .slash { color: var(--text-muted); font-weight: 400; }
   nav a.nav-link {
-    color: #beb8d6;
+    color: var(--text-muted);
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
+    border-bottom: 1px solid transparent;
   }
-  nav a.nav-link:hover { color: #ece9f5; }
+  nav a.nav-link:hover { color: var(--text); border-bottom-color: var(--border); }
 
-  .hero {
-    padding: 40px 0 90px;
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 40px;
-    align-items: center;
+  /* ---------- hero ---------- */
+  .hero { padding: 56px 0 88px; }
+  .prompt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--green);
+    margin-bottom: 20px;
   }
-  .eyebrow {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--violet-bright);
-    margin-bottom: 18px;
-  }
+  .prompt::before { content: '$ '; color: var(--text-muted); }
   .hero h1 {
-    font-size: 46px;
-    line-height: 1.08;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin: 0 0 20px;
-  }
-  .hero h1 .stroke { color: var(--violet-bright); }
-  .hero p.lead {
-    font-size: 16.5px;
-    color: #beb8d6;
-    max-width: 460px;
-    margin: 0 0 0;
-  }
-
-  /* chat mockup */
-  .phone {
-    background: var(--ink-soft);
-    border: 1px solid var(--ink-line);
-    border-radius: 18px;
-    padding: 18px 18px 20px;
-    max-width: 380px;
-    margin: 0 auto;
-  }
-  .phone .phone-head {
-    display: flex;
-    justify-content: space-between;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: #7c74a0;
-    margin-bottom: 14px;
-    letter-spacing: 0.02em;
-  }
-  .bubble {
-    max-width: 84%;
-    padding: 10px 14px;
-    border-radius: 14px;
-    font-size: 14px;
-    margin-bottom: 10px;
-    line-height: 1.4;
-  }
-  .bubble.you {
-    background: #2c273f;
-    color: #ece9f5;
-    margin-left: auto;
-    border-bottom-right-radius: 4px;
-  }
-  .bubble.nova {
-    background: var(--violet-bright);
-    color: #16131f;
-    border-bottom-left-radius: 4px;
-    font-weight: 500;
-  }
-  .bubble .tag {
-    display: block;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    opacity: 0.65;
-    margin-bottom: 3px;
-  }
-
-  /* ---------- paper sections ---------- */
-  section { padding: 72px 0; }
-  section h2 {
-    font-size: 28px;
+    font-size: 52px;
+    line-height: 1.12;
+    font-weight: 600;
     letter-spacing: -0.01em;
-    margin: 0 0 8px;
+    margin: 0 0 22px;
+    max-width: 680px;
+  }
+  .hero p.lead {
+    font-size: 17px;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 0 40px;
+  }
+
+  /* terminal mockup */
+  .term {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    max-width: 560px;
+    overflow: hidden;
+  }
+  .term-head {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .term-head .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .term-head .dot.r { background: #ff5f56; }
+  .term-head .dot.y { background: #ffbd2e; }
+  .term-head .dot.g { background: #27c93f; }
+  .term-head .title {
+    margin-left: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .term-body {
+    padding: 18px 20px 22px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+  .term-body .line { white-space: pre-wrap; }
+  .term-body .p { color: var(--text-muted); }
+  .term-body .cmd { color: var(--text); }
+  .term-body .ok { color: var(--green); }
+  .term-body .cursor {
+    display: inline-block;
+    width: 7px;
+    height: 14px;
+    background: var(--text-muted);
+    vertical-align: text-bottom;
+    margin-left: 2px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .term-body .cursor { animation: blink 1.1s step-end infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+  }
+
+  /* ---------- projects ---------- */
+  section { padding: 12px 0 72px; }
+  section h2 {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
   }
   section .section-sub {
+    font-family: 'JetBrains Mono', monospace;
     color: var(--text-muted);
-    font-size: 15px;
-    margin: 0 0 36px;
-    max-width: 520px;
+    font-size: 13px;
+    margin: 0 0 34px;
   }
 
-  /* project cards */
-  .projects { display: flex; flex-direction: column; gap: 22px; }
-  .case-card {
-    border: 1px solid var(--paper-line);
-    border-radius: 14px;
-    padding: 30px 32px;
-    background: var(--paper-card);
+  .projects { display: flex; flex-direction: column; gap: 20px; }
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    padding: 26px 28px 24px;
   }
-  .case-card .badge {
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .repo-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .repo-name .owner { color: var(--text-muted); }
+  .status {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--amber);
-    margin-bottom: 14px;
+    letter-spacing: 0.04em;
+    padding: 4px 10px;
+    border-radius: 999px;
   }
-  .case-card .badge::before { content: '●'; font-size: 8px; }
-  .case-card .badge.live { color: var(--mint); }
-  .case-card .badge.demo { color: var(--violet); }
-  .case-card h3 { font-size: 21px; margin: 0 0 6px; }
-  .case-card .sub { color: var(--text-muted); font-size: 14px; margin-bottom: 18px; }
-  .result-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-top: 22px;
-  }
-  .result-grid div {
-    border: 1px solid var(--paper-line);
-    border-radius: 10px;
-    padding: 16px;
-  }
-  .result-grid .num {
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 600;
-    font-size: 17px;
-    color: var(--violet);
-    display: block;
-    margin-bottom: 4px;
-  }
-  .result-grid .desc { font-size: 13px; color: var(--text-muted); }
-  .disclaimer {
-    font-size: 12.5px;
-    color: var(--text-muted);
-    margin-top: 22px;
-    padding-top: 16px;
-    border-top: 1px solid var(--paper-line);
-  }
+  .status::before { content: '●'; font-size: 8px; }
+  .status.live { color: var(--green); background: var(--green-dim); }
+  .status.proto { color: var(--amber); background: var(--amber-dim); }
+  .card .sub { color: var(--text-muted); font-size: 14px; margin: 8px 0 16px; }
+  .card p.desc { margin: 0 0 20px; font-size: 14.5px; color: #c4cad3; max-width: 620px; }
 
-  .product-price {
+  .stack-row {
     display: flex;
-    align-items: baseline;
-    gap: 10px;
-    margin-top: 22px;
-    padding-top: 18px;
-    border-top: 1px solid var(--paper-line);
     flex-wrap: wrap;
+    gap: 10px 22px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
   }
-  .product-price .amount {
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 600;
-    font-size: 22px;
-    color: var(--mint);
+  .stack-row .item {
+    font-size: 13px;
+    color: var(--text-muted);
   }
-  .product-price .per { font-size: 13.5px; color: var(--text-muted); }
-  .btn-primary {
-    display: inline-block;
-    background: var(--violet-bright);
-    color: #16131f;
+  .stack-row .item strong { color: var(--text); font-weight: 500; }
+
+  .card-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .amount-line { font-size: 13.5px; color: var(--text-muted); }
+  .amount-line strong { color: var(--text); font-family: 'JetBrains Mono', monospace; }
+  a.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     text-decoration: none;
-    padding: 11px 20px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 14px;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13.5px;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 7px;
   }
-  .product-price a.btn-primary { margin-left: auto; }
-  @media (max-width: 500px) {
-    .product-price a.btn-primary { margin-left: 0; width: 100%; text-align: center; }
+  a.btn:hover { border-color: var(--accent); }
+
+  .mini-chat {
+    margin-top: 18px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px 16px;
+    max-width: 340px;
   }
+  .mini-chat .bubble {
+    max-width: 88%;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .mini-chat .bubble.you { background: #262c36; margin-left: auto; border-bottom-right-radius: 3px; }
+  .mini-chat .bubble.nova { background: var(--accent); color: #0d1117; border-bottom-left-radius: 3px; font-weight: 500; }
+  .mini-chat .bubble .tag {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    margin-bottom: 2px;
+  }
+  .disclaimer { font-size: 12px; color: var(--text-muted); margin-top: 14px; }
 
   footer.site-footer {
-    padding: 26px 0;
+    padding: 30px 0 40px;
     text-align: center;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    color: #7c74a0;
-    border-top: 1px solid var(--ink-line);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
   }
+  footer.site-footer a { color: var(--text-muted); text-decoration: none; border-bottom: 1px solid var(--border); }
+  footer.site-footer a:hover { color: var(--text); border-bottom-color: var(--text-muted); }
 
-  @media (max-width: 860px) {
-    .hero { grid-template-columns: 1fr; padding-bottom: 60px; }
-    .hero h1 { font-size: 34px; }
-    .result-grid { grid-template-columns: 1fr; }
-    section { padding: 54px 0; }
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 36px; }
+    .card { padding: 22px 20px 20px; }
+    .card-cta { align-items: flex-start; }
   }
 </style>
 </head>
 <body>
 
-<div class="ink">
-  <div class="wrap">
-    <nav>
-      <span class="logo">Isaac Mendes</span>
-      <a class="nav-link" href="#projetos">Projetos</a>
-    </nav>
-  </div>
+<div class="wrap">
+  <nav>
+    <span class="path">isaac-mendes <span class="slash">/</span></span>
+    <a class="nav-link" href="#projetos">projetos.md</a>
+  </nav>
 
-  <div class="wrap hero">
-    <div>
-      <div class="eyebrow">Portfólio</div>
-      <h1>Eu construo<br><span class="stroke">produtos</span>, do zero.</h1>
-      <p class="lead">Sites e agentes de IA sob medida — desde a ideia até rodar em produção. Abaixo, alguns dos projetos em que trabalhei.</p>
-    </div>
-    <div class="phone">
-      <div class="phone-head"><span>nova · agente</span><span>9:41</span></div>
-      <div class="bubble you"><span class="tag">você</span>cria uma tarefa pra repor a farinha</div>
-      <div class="bubble nova"><span class="tag">nova</span>✅ tarefa criada — lembrete amanhã às 8h</div>
-      <div class="bubble you"><span class="tag">você</span>📎 comprovante.jpg</div>
-      <div class="bubble nova"><span class="tag">nova</span>R$ 47,90 lançado em Insumos — comprovante salvo</div>
+  <div class="hero">
+    <div class="prompt reveal">whoami</div>
+    <h1 class="reveal">Eu construo produtos que rodam de verdade.</h1>
+    <p class="lead reveal">Sites e agentes de IA sob medida — desde a ideia até em produção. Abaixo, o que já ficou pronto.</p>
+
+    <div class="term reveal">
+      <div class="term-head">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="title">deploy.log</span>
+      </div>
+      <div class="term-body">
+        <div class="line"><span class="p">isaac@build</span> <span class="cmd">git push origin main</span></div>
+        <div class="line ok">✓ build concluído</div>
+        <div class="line"><span class="p">isaac@build</span> <span class="cmd">render deploy avaliacao-fisica</span></div>
+        <div class="line ok">✓ live em produção<span class="cursor"></span></div>
+      </div>
     </div>
   </div>
 </div>
 
 <section id="projetos">
   <div class="wrap">
-    <div class="eyebrow" style="color:var(--violet)">Trabalhos</div>
     <h2>Projetos</h2>
-    <p class="section-sub">Um SaaS em produção e dois protótipos autorais, construídos pra mostrar como resolvo problemas de verdade.</p>
+    <p class="section-sub">3 arquivos, 3 estados diferentes.</p>
 
     <div class="projects">
 
-      <div class="case-card">
-        <div class="badge live">Em produção</div>
-        <h3>Avaliação Física</h3>
+      <div class="card">
+        <div class="card-head">
+          <span class="repo-name"><span class="owner">isaac-mendes/</span>avaliacao-fisica</span>
+          <span class="status live">live</span>
+        </div>
         <div class="sub">SaaS pra personal trainers acompanharem a evolução física dos clientes</div>
-        <p>Cadastro de cliente, histórico completo de avaliações com gráfico de evolução, e cálculo automático de % de gordura por 5 protocolos científicos diferentes (Pollock, Guedes, Durnin-Womersley). Fotos de progresso comparadas lado a lado, com uma trena arrastável pra revelar o antes e depois. Cada personal tem sua própria conta: os dados de um cliente nunca aparecem pra outro.</p>
-        <div class="result-grid">
-          <div><span class="num">5 protocolos</span><span class="desc">de cálculo de % de gordura, à escolha do personal</span></div>
-          <div><span class="num">Fotos comparáveis</span><span class="desc">antes/depois com trena arrastável</span></div>
-          <div><span class="num">Multiusuário</span><span class="desc">login próprio, dados isolados por personal</span></div>
+        <p class="desc">Cadastro de cliente, histórico de avaliações com gráfico de evolução, e cálculo automático de % de gordura por 5 protocolos científicos (Pollock, Guedes, Durnin-Womersley). Fotos de progresso comparadas lado a lado com trena arrastável. Cada personal tem sua própria conta — dados isolados por usuário.</p>
+        <div class="stack-row">
+          <span class="item"><strong>5 protocolos</strong> de cálculo à escolha</span>
+          <span class="item"><strong>Fotos comparáveis</strong> antes/depois</span>
+          <span class="item"><strong>Multiusuário</strong> dados isolados</span>
         </div>
-        <div class="product-price">
-          <span class="amount">R$ 19,90</span>
-          <span class="per">/ mês por personal, clientes ilimitados</span>
-          <a class="btn-primary" href="https://avaliacao-fisica-u8zq.onrender.com" target="_blank" rel="noopener">Ver o app</a>
+        <div class="card-cta">
+          <span class="amount-line"><strong>R$ 19,90</strong> / mês por personal, clientes ilimitados</span>
+          <a class="btn" href="https://avaliacao-fisica-u8zq.onrender.com" target="_blank" rel="noopener">Ver o app →</a>
         </div>
       </div>
 
-      <div class="case-card">
-        <div class="badge demo">Protótipo autoral</div>
-        <h3>Nova — assistente de IA</h3>
-        <div class="sub">Bella Massa: um caso de uso fictício pra mostrar o assistente funcionando na prática</div>
-        <p>Assistente de IA que organiza o dia a dia de um pequeno negócio por chat: cria tarefas por linguagem natural, lê comprovante de pagamento automaticamente, importa extrato bancário com mapeamento de colunas e monta resumo financeiro com gráfico por categoria.</p>
-        <div class="result-grid">
-          <div><span class="num">Chat → tarefa</span><span class="desc">linguagem natural vira lembrete, na hora</span></div>
-          <div><span class="num">Leitura automática</span><span class="desc">de comprovante, sem digitar nada</span></div>
-          <div><span class="num">Extrato → gráfico</span><span class="desc">resumo financeiro por categoria</span></div>
+      <div class="card">
+        <div class="card-head">
+          <span class="repo-name"><span class="owner">isaac-mendes/</span>nova-assistente</span>
+          <span class="status proto">protótipo</span>
         </div>
-        <div class="disclaimer">Bella Massa é um negócio fictício, usado como prova de conceito autoral — não é depoimento de um cliente real. O protótipo em si é funcional e está disponível pra demonstração ao vivo.</div>
+        <div class="sub">Bella Massa: caso de uso fictício pra mostrar o assistente funcionando na prática</div>
+        <p class="desc">Assistente de IA que organiza o dia a dia de um pequeno negócio por chat: cria tarefas por linguagem natural, lê comprovante de pagamento automaticamente, importa extrato bancário e monta resumo financeiro com gráfico por categoria.</p>
+        <div class="mini-chat">
+          <div class="bubble you"><span class="tag">você</span>cria uma tarefa pra repor a farinha</div>
+          <div class="bubble nova"><span class="tag">nova</span>✅ tarefa criada — lembrete amanhã às 8h</div>
+          <div class="bubble you"><span class="tag">você</span>📎 comprovante.jpg</div>
+          <div class="bubble nova"><span class="tag">nova</span>R$ 47,90 lançado em Insumos</div>
+        </div>
+        <div class="disclaimer">Bella Massa é um negócio fictício, usado como prova de conceito autoral — não é depoimento de um cliente real.</div>
       </div>
 
-      <div class="case-card">
-        <div class="badge demo">Protótipo autoral</div>
-        <h3>Empire Streetwear</h3>
+      <div class="card">
+        <div class="card-head">
+          <span class="repo-name"><span class="owner">isaac-mendes/</span>empire-streetwear</span>
+          <span class="status proto">protótipo</span>
+        </div>
         <div class="sub">Loja virtual fictícia, construída pra praticar e-commerce do zero</div>
-        <p>Catálogo com busca e filtro por categoria e faixa de preço, carrinho, checkout e confirmação de pedido — o fluxo completo de uma loja online, sem depender de plataforma pronta.</p>
-        <div class="result-grid">
-          <div><span class="num">Catálogo</span><span class="desc">busca por nome/marca e filtros combinados</span></div>
-          <div><span class="num">Carrinho</span><span class="desc">persistente, com resumo de pedido</span></div>
-          <div><span class="num">Checkout</span><span class="desc">fluxo completo até a confirmação</span></div>
+        <p class="desc">Catálogo com busca e filtro por categoria e faixa de preço, carrinho, checkout e confirmação de pedido — o fluxo completo de uma loja online, sem depender de plataforma pronta.</p>
+        <div class="stack-row">
+          <span class="item"><strong>Catálogo</strong> busca e filtros combinados</span>
+          <span class="item"><strong>Carrinho</strong> persistente</span>
+          <span class="item"><strong>Checkout</strong> fluxo completo</span>
         </div>
         <div class="disclaimer">Empire Streetwear é uma loja demonstrativa de estudo — não realiza vendas reais.</div>
       </div>
@@ -347,7 +367,9 @@
   </div>
 </section>
 
-<footer class="site-footer ink">Isaac Mendes</footer>
+<footer class="site-footer">
+  isaac-mendes · <a href="https://github.com/mende-debug/isaacmendes" target="_blank" rel="noopener">código-fonte deste site</a>
+</footer>
 
 </body>
 </html>
