@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Isaac Mendes — portfólio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #16131f;
+    --ink-soft: #221d33;
+    --ink-line: #35304a;
+    --paper: #faf8f4;
+    --paper-card: #ffffff;
+    --paper-line: #e8e3da;
+    --text: #1d1a26;
+    --text-muted: #6b6479;
+    --violet: #6a4bf2;
+    --violet-bright: #9b82ff;
+    --amber: #d99a3f;
+    --mint: #3fb383;
+  }
+  * { box-sizing: border-box; }
+  html { overflow-x: hidden; }
+  body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    color: var(--text);
+    background: var(--paper);
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, .display { font-family: 'Space Grotesk', 'Inter', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  a { color: inherit; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .bubble { animation: rise 0.5s ease both; }
+    .bubble:nth-child(1) { animation-delay: 0.15s; }
+    .bubble:nth-child(2) { animation-delay: 0.55s; }
+    .bubble:nth-child(3) { animation-delay: 1.05s; }
+    .bubble:nth-child(4) { animation-delay: 1.45s; }
+    @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  }
+
+  /* ---------- ink sections (hero + footer) ---------- */
+  .ink { background: var(--ink); color: #ece9f5; }
+  .ink .text-muted { color: #a49dc0; }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px 0;
+  }
+  nav .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  nav .logo .dot { color: var(--violet-bright); }
+  nav a.nav-link {
+    color: #beb8d6;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  nav a.nav-link:hover { color: #ece9f5; }
+
+  .hero {
+    padding: 40px 0 90px;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--violet-bright);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: 46px;
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+  }
+  .hero h1 .stroke { color: var(--violet-bright); }
+  .hero p.lead {
+    font-size: 16.5px;
+    color: #beb8d6;
+    max-width: 460px;
+    margin: 0 0 0;
+  }
+
+  /* chat mockup */
+  .phone {
+    background: var(--ink-soft);
+    border: 1px solid var(--ink-line);
+    border-radius: 18px;
+    padding: 18px 18px 20px;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .phone .phone-head {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: #7c74a0;
+    margin-bottom: 14px;
+    letter-spacing: 0.02em;
+  }
+  .bubble {
+    max-width: 84%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  .bubble.you {
+    background: #2c273f;
+    color: #ece9f5;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+  }
+  .bubble.nova {
+    background: var(--violet-bright);
+    color: #16131f;
+    border-bottom-left-radius: 4px;
+    font-weight: 500;
+  }
+  .bubble .tag {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.65;
+    margin-bottom: 3px;
+  }
+
+  /* ---------- paper sections ---------- */
+  section { padding: 72px 0; }
+  section h2 {
+    font-size: 28px;
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+  }
+  section .section-sub {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin: 0 0 36px;
+    max-width: 520px;
+  }
+
+  /* project cards */
+  .projects { display: flex; flex-direction: column; gap: 22px; }
+  .case-card {
+    border: 1px solid var(--paper-line);
+    border-radius: 14px;
+    padding: 30px 32px;
+    background: var(--paper-card);
+  }
+  .case-card .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--amber);
+    margin-bottom: 14px;
+  }
+  .case-card .badge::before { content: '●'; font-size: 8px; }
+  .case-card .badge.live { color: var(--mint); }
+  .case-card .badge.demo { color: var(--violet); }
+  .case-card h3 { font-size: 21px; margin: 0 0 6px; }
+  .case-card .sub { color: var(--text-muted); font-size: 14px; margin-bottom: 18px; }
+  .result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 22px;
+  }
+  .result-grid div {
+    border: 1px solid var(--paper-line);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .result-grid .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--violet);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .result-grid .desc { font-size: 13px; color: var(--text-muted); }
+  .disclaimer {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px solid var(--paper-line);
+  }
+
+  .product-price {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--paper-line);
+    flex-wrap: wrap;
+  }
+  .product-price .amount {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--mint);
+  }
+  .product-price .per { font-size: 13.5px; color: var(--text-muted); }
+  .btn-primary {
+    display: inline-block;
+    background: var(--violet-bright);
+    color: #16131f;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .product-price a.btn-primary { margin-left: auto; }
+  @media (max-width: 500px) {
+    .product-price a.btn-primary { margin-left: 0; width: 100%; text-align: center; }
+  }
+
+  footer.site-footer {
+    padding: 26px 0;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: #7c74a0;
+    border-top: 1px solid var(--ink-line);
+  }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; padding-bottom: 60px; }
+    .hero h1 { font-size: 34px; }
+    .result-grid { grid-template-columns: 1fr; }
+    section { padding: 54px 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ink">
+  <div class="wrap">
+    <nav>
+      <span class="logo">Isaac Mendes</span>
+      <a class="nav-link" href="#projetos">Projetos</a>
+    </nav>
+  </div>
+
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">Portfólio</div>
+      <h1>Eu construo<br><span class="stroke">produtos</span>, do zero.</h1>
+      <p class="lead">Sites e agentes de IA sob medida — desde a ideia até rodar em produção. Abaixo, alguns dos projetos em que trabalhei.</p>
+    </div>
+    <div class="phone">
+      <div class="phone-head"><span>nova · agente</span><span>9:41</span></div>
+      <div class="bubble you"><span class="tag">você</span>cria uma tarefa pra repor a farinha</div>
+      <div class="bubble nova"><span class="tag">nova</span>✅ tarefa criada — lembrete amanhã às 8h</div>
+      <div class="bubble you"><span class="tag">você</span>📎 comprovante.jpg</div>
+      <div class="bubble nova"><span class="tag">nova</span>R$ 47,90 lançado em Insumos — comprovante salvo</div>
+    </div>
+  </div>
+</div>
+
+<section id="projetos">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--violet)">Trabalhos</div>
+    <h2>Projetos</h2>
+    <p class="section-sub">Um SaaS em produção e dois protótipos autorais, construídos pra mostrar como resolvo problemas de verdade.</p>
+
+    <div class="projects">
+
+      <div class="case-card">
+        <div class="badge live">Em produção</div>
+        <h3>Avaliação Física</h3>
+        <div class="sub">SaaS pra personal trainers acompanharem a evolução física dos clientes</div>
+        <p>Cadastro de cliente, histórico completo de avaliações com gráfico de evolução, e cálculo automático de % de gordura por 5 protocolos científicos diferentes (Pollock, Guedes, Durnin-Womersley). Fotos de progresso comparadas lado a lado, com uma trena arrastável pra revelar o antes e depois. Cada personal tem sua própria conta: os dados de um cliente nunca aparecem pra outro.</p>
+        <div class="result-grid">
+          <div><span class="num">5 protocolos</span><span class="desc">de cálculo de % de gordura, à escolha do personal</span></div>
+          <div><span class="num">Fotos comparáveis</span><span class="desc">antes/depois com trena arrastável</span></div>
+          <div><span class="num">Multiusuário</span><span class="desc">login próprio, dados isolados por personal</span></div>
+        </div>
+        <div class="product-price">
+          <span class="amount">R$ 19,90</span>
+          <span class="per">/ mês por personal, clientes ilimitados</span>
+          <a class="btn-primary" href="https://avaliacao-fisica-u8zq.onrender.com" target="_blank" rel="noopener">Ver o app</a>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="badge demo">Protótipo autoral</div>
+        <h3>Nova — assistente de IA</h3>
+        <div class="sub">Bella Massa: um caso de uso fictício pra mostrar o assistente funcionando na prática</div>
+        <p>Assistente de IA que organiza o dia a dia de um pequeno negócio por chat: cria tarefas por linguagem natural, lê comprovante de pagamento automaticamente, importa extrato bancário com mapeamento de colunas e monta resumo financeiro com gráfico por categoria.</p>
+        <div class="result-grid">
+          <div><span class="num">Chat → tarefa</span><span class="desc">linguagem natural vira lembrete, na hora</span></div>
+          <div><span class="num">Leitura automática</span><span class="desc">de comprovante, sem digitar nada</span></div>
+          <div><span class="num">Extrato → gráfico</span><span class="desc">resumo financeiro por categoria</span></div>
+        </div>
+        <div class="disclaimer">Bella Massa é um negócio fictício, usado como prova de conceito autoral — não é depoimento de um cliente real. O protótipo em si é funcional e está disponível pra demonstração ao vivo.</div>
+      </div>
+
+      <div class="case-card">
+        <div class="badge demo">Protótipo autoral</div>
+        <h3>Empire Streetwear</h3>
+        <div class="sub">Loja virtual fictícia, construída pra praticar e-commerce do zero</div>
+        <p>Catálogo com busca e filtro por categoria e faixa de preço, carrinho, checkout e confirmação de pedido — o fluxo completo de uma loja online, sem depender de plataforma pronta.</p>
+        <div class="result-grid">
+          <div><span class="num">Catálogo</span><span class="desc">busca por nome/marca e filtros combinados</span></div>
+          <div><span class="num">Carrinho</span><span class="desc">persistente, com resumo de pedido</span></div>
+          <div><span class="num">Checkout</span><span class="desc">fluxo completo até a confirmação</span></div>
+        </div>
+        <div class="disclaimer">Empire Streetwear é uma loja demonstrativa de estudo — não realiza vendas reais.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer ink">Isaac Mendes</footer>
+
+</body>
+</html>
