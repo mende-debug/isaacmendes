@@ -1,0 +1,24 @@
+# Blueprint da Render para o Logan Simulador (app em ./logan-simulador).
+# SQLite precisa de disco persistente, disponível a partir do plano Starter.
+services:
+  - type: web
+    name: logan-simulador
+    runtime: node
+    rootDir: logan-simulador
+    plan: starter
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /login
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: DATABASE_URL
+        value: file:/var/data/logan.db
+      - key: AUTH_SECRET
+        generateValue: true
+      - key: ALLOW_SIGNUP
+        value: "true"
+    disk:
+      name: logan-data
+      mountPath: /var/data
+      sizeGB: 1

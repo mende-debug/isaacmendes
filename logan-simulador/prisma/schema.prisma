@@ -1,0 +1,57 @@
+// Para migrar para Postgres: troque provider para "postgresql",
+// aponte DATABASE_URL para o banco e rode `prisma migrate dev` para gerar novas migrations.
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String       @id @default(cuid())
+  username     String       @unique
+  nome         String
+  passwordHash String
+  createdAt    DateTime     @default(now())
+  clientes     Cliente[]
+  simulacoes   Simulacao[]
+}
+
+model Cliente {
+  id         String      @id @default(cuid())
+  userId     String
+  user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nome       String
+  /// nome em minúsculas e sem acento, para agrupar o histórico
+  chave      String
+  telefone   String      @default("")
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  simulacoes Simulacao[]
+
+  @@unique([userId, chave])
+}
+
+model Simulacao {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  clienteId      String?
+  cliente        Cliente? @relation(fields: [clienteId], references: [id], onDelete: SetNull)
+  titulo         String
+  empreendimento String   @default("")
+  unidade        String   @default("")
+  valorImovel    Float    @default(0)
+  saldo          Float    @default(0)
+  fechado        Boolean  @default(false)
+  /// FluxoInput serializado (lib/fluxo.ts)
+  dados          String
+  /// Cenario[] extras para comparação, serializados
+  cenarios       String   @default("[]")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([userId, updatedAt])
+}
