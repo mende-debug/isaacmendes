@@ -26,8 +26,9 @@
      ------------------------------------------------------- */
   const PRODUCTS = [
     {
-      id: "classico-redondo", cat: "grau", name: "Clássico Redondo", shape: "round",
-      desc: "Acetato leve com lentes monofocais e proteção UV.",
+      id: "classico-acetato", cat: "grau", name: "Clássico Acetato", shape: "square",
+      img: "classico-redondo", alt: "Homem usando óculos de grau com armação preta de acetato",
+      desc: "Armação marcante em acetato, com lentes monofocais e proteção UV.",
       price: 249.9, badge: "Mais vendido", rx: true,
       colors: [
         { name: "Preto", frame: "#1b1e26" },
@@ -36,17 +37,19 @@
       ],
     },
     {
-      id: "linha-essencial", cat: "grau", name: "Linha Essencial", shape: "rect",
-      desc: "Metal fino e retangular, discreto para o dia a dia.",
+      id: "essencial-redondo", cat: "grau", name: "Essencial Redondo", shape: "round",
+      img: "linha-essencial", alt: "Óculos redondo de metal fino sobre fundo claro",
+      desc: "Metal fino e leve, discreto para o dia a dia.",
       price: 199.9, rx: true, thin: true,
       colors: [
-        { name: "Grafite", frame: "#3a4150" },
         { name: "Prata", frame: "#9aa3b2" },
         { name: "Dourado", frame: "#b8902f" },
+        { name: "Grafite", frame: "#3a4150" },
       ],
     },
     {
       id: "executivo-quadrado", cat: "grau", name: "Executivo Quadrado", shape: "square",
+      img: "executivo-quadrado", alt: "Homem de terno usando óculos quadrado preto",
       desc: "Presença e conforto, com hastes reforçadas.",
       price: 279.9, rx: true,
       colors: [
@@ -57,74 +60,80 @@
     },
     {
       id: "gatinho-elegance", cat: "grau", name: "Gatinho Elegance", shape: "cateye",
-      desc: "Formato gatinho que valoriza o olhar.",
+      img: "gatinho-elegance", alt: "Mulher sorrindo com óculos grande de armação verde",
+      desc: "Formato marcante que valoriza o olhar.",
       price: 269.9, badge: "Novo", badgeBlue: true, rx: true,
       colors: [
+        { name: "Verde", frame: "#1f7a6b" },
         { name: "Preto", frame: "#1b1e26" },
         { name: "Rosé", frame: "#c27f86" },
-        { name: "Tartaruga", frame: "#7a4a24" },
       ],
     },
     {
-      id: "oval-leve", cat: "grau", name: "Oval Leve", shape: "kids",
-      desc: "Formato oval suave, combina com todos os rostos.",
-      price: 229.9, rx: true, thin: true,
+      id: "oval-tartaruga", cat: "grau", name: "Oval Tartaruga", shape: "kids",
+      img: "oval-tartaruga", alt: "Óculos oval tartaruga sobre um livro",
+      desc: "Oval suave em acetato tartaruga, combina com todos os rostos.",
+      price: 229.9, rx: true,
       colors: [
-        { name: "Dourado", frame: "#b8902f" },
-        { name: "Prata", frame: "#9aa3b2" },
+        { name: "Tartaruga", frame: "#7a4a24" },
         { name: "Preto", frame: "#1b1e26" },
       ],
     },
     {
       id: "aviador-polarizado", cat: "sol", name: "Aviador Polarizado", shape: "aviator",
+      img: "aviador-polarizado", alt: "Óculos de sol aviador dourado com lentes marrons",
       desc: "Lentes polarizadas UV400 que cortam o reflexo.",
       price: 189.9, badge: "Polarizado", badgeBlue: true, thin: true,
       colors: [
-        { name: "Dourado / verde", frame: "#b8902f", tint: "#2f4a35" },
+        { name: "Dourado / marrom", frame: "#b8902f", tint: "#5a3a22" },
         { name: "Prata / azul", frame: "#9aa3b2", tint: "#1d3d6b" },
         { name: "Preto / fumê", frame: "#1b1e26", tint: "#22262e" },
       ],
     },
     {
       id: "urban-sol", cat: "sol", name: "Urban Sol", shape: "wayfarer",
+      img: "urban-sol", alt: "Óculos de sol preto com lentes degradê sobre fundo branco",
       desc: "Estilo clássico com proteção UV400.",
       price: 159.9,
       colors: [
-        { name: "Preto fosco", frame: "#1b1e26", tint: "#2a2d35" },
-        { name: "Azul translúcido", frame: "#1b6fa8", tint: "#1e2f4a" },
+        { name: "Preto", frame: "#1b1e26", tint: "#2a2d35" },
         { name: "Tartaruga", frame: "#7a4a24", tint: "#4a3322" },
       ],
     },
     {
       id: "retro-redondo-sol", cat: "sol", name: "Retrô Redondo", shape: "round",
-      desc: "Redondo de metal com lentes degradê UV400.",
+      img: "retro-redondo", alt: "Óculos de sol redondo dourado com lentes verdes sobre mármore",
+      desc: "Redondo de metal com lentes verdes UV400.",
       price: 169.9, thin: true,
       colors: [
-        { name: "Dourado / marrom", frame: "#b8902f", tint: "#5a3a22" },
+        { name: "Dourado / verde", frame: "#b8902f", tint: "#2f4a35" },
         { name: "Preto / fumê", frame: "#1b1e26", tint: "#2a2d35" },
       ],
     },
     {
-      id: "street-sol", cat: "sol", name: "Street Sol", shape: "rect",
-      desc: "Retangular moderno com lentes UV400.",
-      price: 149.9,
+      id: "gatinho-sol", cat: "sol", name: "Gatinho Sol", shape: "cateye",
+      img: "gatinho-sol", alt: "Óculos de sol gatinho com armação nude e lentes degradê",
+      desc: "Gatinho feminino com lentes degradê UV400.",
+      price: 179.9,
       colors: [
-        { name: "Preto / fumê", frame: "#1b1e26", tint: "#2a2d35" },
-        { name: "Vinho / marrom", frame: "#6b1f2e", tint: "#4a3322" },
+        { name: "Nude", frame: "#d9b8a3", tint: "#4a3322" },
+        { name: "Preto", frame: "#1b1e26", tint: "#2a2d35" },
       ],
     },
     {
-      id: "kids-redondo", cat: "infantil", name: "Kids Redondo", shape: "round",
-      desc: "Leve e confortável para o dia a dia na escola.",
-      price: 169.9, rx: true,
+      id: "espelhado", cat: "sol", name: "Espelhado Sunset", shape: "aviator",
+      img: "espelhado", alt: "Mulher usando óculos de sol com lentes espelhadas laranja",
+      desc: "Lentes espelhadas que são puro estilo, com UV400.",
+      price: 199.9, badge: "Tendência",
       colors: [
-        { name: "Azul-marinho", frame: "#0a2a6b" },
-        { name: "Lilás", frame: "#8a6bc4" },
+        { name: "Laranja", frame: "#b8902f", tint: "#c2621f" },
+        { name: "Azul", frame: "#9aa3b2", tint: "#1d5fa8" },
       ],
     },
     {
       id: "kids-flex", cat: "infantil", name: "Kids Flex", shape: "kids",
-      desc: "Armação flexível e resistente, com lentes de grau.",
+      img: "kids-flex", alt: "Três crianças sorrindo sentadas juntas",
+      desc: "Armação flexível e resistente para crianças, com lentes de grau.",
       price: 179.9, badge: "Flexível", rx: true,
       colors: [
         { name: "Azul", frame: "#1b9ad8" },
@@ -133,29 +142,34 @@
       ],
     },
     {
-      id: "kids-sol", cat: "infantil", name: "Kids Sol UV400", shape: "wayfarer",
+      id: "kids-sol", cat: "infantil", name: "Kids Sol UV400", shape: "cateye",
+      img: "kids-sol", alt: "Óculos de sol infantil rosa ao lado de um estojo amarelo",
       desc: "Proteção para os olhos dos pequenos no sol.",
       price: 99.9,
       colors: [
-        { name: "Azul", frame: "#1b9ad8", tint: "#1e2f4a" },
         { name: "Rosa", frame: "#e0679a", tint: "#3a2a35" },
+        { name: "Azul", frame: "#1b9ad8", tint: "#1e2f4a" },
       ],
     },
     {
       id: "lente-antirreflexo", cat: "lentes", name: "Antirreflexo Premium", lens: "ar",
+      img: "lente-antirreflexo", alt: "Homem usando óculos com lentes sem reflexo",
       desc: "Menos reflexos e mais nitidez em telas e à noite.", price: 89.9, addon: true,
     },
     {
       id: "lente-luz-azul", cat: "lentes", name: "Filtro de Luz Azul", lens: "blue",
+      img: "lente-luz-azul", alt: "Mulher trabalhando em frente a vários monitores",
       desc: "Mais conforto para quem passa horas no celular e no computador.", price: 119.9, addon: true,
       badge: "Para telas", badgeBlue: true,
     },
     {
       id: "lente-fotossensivel", cat: "lentes", name: "Fotossensível", lens: "photo",
+      img: "lente-fotossensivel", alt: "Óculos escuros sobre a areia da praia",
       desc: "Escurece no sol e clareia em ambientes internos.", price: 249.9, addon: true,
     },
     {
       id: "lente-multifocal", cat: "lentes", name: "Multifocal", lens: "multi",
+      img: "lente-multifocal", alt: "Óculos de leitura apoiados sobre um livro",
       desc: "Longe, intermediário e perto em uma única lente.", price: 499.9, from: true, addon: true,
     },
   ];
@@ -171,6 +185,35 @@
   const money = (v) => brl.format(Math.round(v * 100) / 100);
   const byId = Object.fromEntries(PRODUCTS.map((p) => [p.id, p]));
   let uidSeq = 0;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  // Foto do produto "voa" até a sacola
+  function flyToCart(card) {
+    if (reduceMotion.matches) return false;
+    const src = card.querySelector("[data-art] img, [data-art] svg");
+    const target = document.querySelector(".cart-btn");
+    if (!src || !target || typeof src.animate !== "function") return false;
+    const a = src.getBoundingClientRect();
+    const b = target.getBoundingClientRect();
+    const ghost = src.cloneNode(true);
+    ghost.removeAttribute("loading");
+    ghost.setAttribute("aria-hidden", "true");
+    Object.assign(ghost.style, {
+      position: "fixed", left: a.left + "px", top: a.top + "px", width: a.width + "px", height: a.height + "px",
+      margin: "0", zIndex: "130", pointerEvents: "none", objectFit: "cover", borderRadius: "18px",
+      boxShadow: "0 20px 40px -10px rgba(5,17,58,.45)",
+    });
+    document.body.appendChild(ghost);
+    const dx = b.left + b.width / 2 - (a.left + a.width / 2);
+    const dy = b.top + b.height / 2 - (a.top + a.height / 2);
+    const anim = ghost.animate([
+      { transform: "translate(0, 0) scale(1)", opacity: 1, borderRadius: "18px" },
+      { transform: `translate(${dx * 0.55}px, ${dy * 0.55 - 70}px) scale(.42)`, opacity: 1, borderRadius: "40%", offset: 0.55 },
+      { transform: `translate(${dx}px, ${dy}px) scale(.06)`, opacity: 0.3, borderRadius: "50%" },
+    ], { duration: 700, easing: "cubic-bezier(.55,0,.25,1)" });
+    anim.onfinish = anim.oncancel = () => ghost.remove();
+    return true;
+  }
 
   function maxInstallments(total) {
     return Math.max(1, Math.min(CONFIG.parcelasMax, Math.floor(total / CONFIG.parcelaMinima)));
@@ -257,7 +300,10 @@
     return `<svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lente ${p.name}"><defs>${defs}</defs>${ring}${p.lens === "multi" ? "" : shine}${extra}</svg>`;
   }
 
-  const productArt = (p, colorIdx = 0) => (p.lens ? lensSVG(p) : glassesSVG(p, colorIdx));
+  const IMG_BASE = "assets/fotos/";
+  const productArt = (p, colorIdx = 0) => p.img
+    ? `<img src="${IMG_BASE}${p.img}.webp" alt="${p.alt || p.name}" width="800" height="600" loading="lazy" decoding="async">`
+    : (p.lens ? lensSVG(p) : glassesSVG(p, colorIdx));
 
   /* -------------------------------------------------------
      Catálogo
@@ -265,6 +311,7 @@
   const grid = $("#products");
   const selectedColor = {}; // id -> índice
   let currentFilter = "todos";
+  let revealReady = false;
 
   function productCard(p, i) {
     const ci = selectedColor[p.id] || 0;
@@ -273,7 +320,7 @@
         p.colors.map((c, idx) =>
           `<button type="button" class="swatch" style="background:${c.frame}" data-swatch="${idx}" aria-pressed="${idx === ci}" aria-label="Cor ${c.name}" title="${c.name}"></button>`
         ).join("") +
-        `<span class="swatch-label" data-swatch-label>${p.colors[ci].name}</span></div>`
+        `<span class="swatch-label">Cor: <span data-swatch-label>${p.colors[ci].name}</span></span></div>`
       : "";
     return `
       <article class="product" data-id="${p.id}" style="animation-delay:${Math.min(i, 8) * 50}ms">
@@ -303,6 +350,7 @@
   function renderProducts() {
     const list = currentFilter === "todos" ? PRODUCTS : PRODUCTS.filter((p) => p.cat === currentFilter);
     grid.innerHTML = list.map(productCard).join("");
+    if (revealReady) observeReveal($$(".product", grid));
   }
 
   $$("[data-filter]").forEach((btn) => {
@@ -328,13 +376,16 @@
       selectedColor[p.id] = idx;
       $$("[data-swatch]", card).forEach((b) => b.setAttribute("aria-pressed", String(b === sw)));
       $("[data-swatch-label]", card).textContent = p.colors[idx].name;
-      $("[data-art]", card).innerHTML = productArt(p, idx);
+      if (!p.img) $("[data-art]", card).innerHTML = productArt(p, idx);
       return;
     }
 
     const add = e.target.closest("[data-add]");
     if (add) {
-      Cart.add(p.id, p.colors ? selectedColor[p.id] || 0 : null);
+      const color = p.colors ? selectedColor[p.id] || 0 : null;
+      const flew = flyToCart(card);
+      Cart.add(p.id, color, !flew);
+      if (flew) setTimeout(() => renderCart(true), 620);
       add.classList.add("added");
       add.innerHTML = `<svg class="ic"><use href="#i-check"/></svg>`;
       clearTimeout(add._t);
@@ -360,12 +411,12 @@
     },
     save() { storage.set(CART_KEY, this.items); },
     key(id, color) { return `${id}::${color == null ? "-" : color}`; },
-    add(id, color) {
+    add(id, color, bump = true) {
       const k = this.key(id, color);
       const found = this.items.find((it) => this.key(it.id, it.color) === k);
       if (found) found.qty = Math.min(found.qty + 1, 20);
       else this.items.push({ id, color, qty: 1 });
-      this.changed(true);
+      this.changed(bump);
     },
     setQty(index, qty) {
       if (!this.items[index]) return;
@@ -658,8 +709,12 @@
       f.msg.value.trim() ? `*Observações:* ${f.msg.value.trim()}` : null,
     ].filter((l) => l !== null).join("\n");
 
-    window.open(waLink(msg), "_blank", "noopener");
-    toast("Abrindo o WhatsApp com sua solicitação…");
+    const url = waLink(msg);
+    const ok2 = $("#campaign-success");
+    $("#campaign-link").href = url;
+    ok2.hidden = false;
+    ok2.scrollIntoView({ behavior: reduceMotion.matches ? "auto" : "smooth", block: "nearest" });
+    window.open(url, "_blank", "noopener");
   });
 
   /* -------------------------------------------------------
@@ -711,24 +766,63 @@
   window.matchMedia("(min-width: 901px)").addEventListener("change", (m) => { if (m.matches) setMenu(false); });
 
   // Revelar ao rolar
-  const reveals = $$(".reveal");
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (!en.isIntersecting) return;
-        const el = en.target;
-        const siblings = Array.from(el.parentElement.children);
-        el.style.transitionDelay = `${siblings.indexOf(el) * 80}ms`;
-        el.classList.add("is-in");
-        io.unobserve(el);
+  const io = "IntersectionObserver" in window && !reduceMotion.matches
+    ? new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (!en.isIntersecting) return;
+          const el = en.target;
+          const isProduct = el.classList.contains("product");
+          const siblings = Array.from(el.parentElement.children).filter((c) => c.classList.contains(isProduct ? "product" : "reveal"));
+          const idx = Math.max(0, siblings.indexOf(el));
+          const step = isProduct ? idx % 4 : Math.min(idx, 5);
+          el.style.transitionDelay = `${step * 90}ms`;
+          el.classList.add("is-in");
+          // libera o atraso depois da entrada, para o hover responder na hora
+          setTimeout(() => { el.style.transitionDelay = ""; }, 1200 + step * 90);
+          io.unobserve(el);
+        });
+      }, { rootMargin: "0px 0px -6% 0px", threshold: 0.12 })
+    : null;
+  function observeReveal(els) {
+    els.forEach((el) => (io ? io.observe(el) : el.classList.add("is-in")));
+  }
+  observeReveal($$(".reveal"));
+
+  /* ---------- Animações ---------- */
+  // Barra de progresso de leitura
+  const progress = $(".scroll-progress");
+  let ticking = false;
+  function updateProgress() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.transform = `scaleX(${max > 0 ? Math.min(1, window.scrollY / max) : 0})`;
+    ticking = false;
+  }
+  window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(updateProgress); } }, { passive: true });
+  updateProgress();
+
+  // Parallax suave no hero (só mouse/trackpad)
+  const hero = $(".hero");
+  const heroVisual = $(".hero-visual");
+  if (hero && heroVisual && window.matchMedia("(pointer: fine)").matches && !reduceMotion.matches) {
+    let raf = 0;
+    hero.addEventListener("pointermove", (e) => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const r = hero.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        heroVisual.style.setProperty("--px", x.toFixed(3));
+        heroVisual.style.setProperty("--py", y.toFixed(3));
       });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.1 });
-    reveals.forEach((el) => io.observe(el));
-  } else {
-    reveals.forEach((el) => el.classList.add("is-in"));
+    });
+    hero.addEventListener("pointerleave", () => {
+      heroVisual.style.setProperty("--px", 0);
+      heroVisual.style.setProperty("--py", 0);
+    });
   }
 
   /* ---------- Início ---------- */
+  revealReady = true;
   Cart.load();
   renderProducts();
   renderCart();

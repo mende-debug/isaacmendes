@@ -51,6 +51,7 @@
 </svg>
 
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="scroll-progress" aria-hidden="true"></div>
 
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="topo">
@@ -91,14 +92,14 @@
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="container hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow eyebrow-light"><span class="dot"></span> Ótica independente que vai até você</p>
-      <h1>Enxergar bem <span class="grad-text">mais perto</span> de você.</h1>
-      <p class="lead">Levamos atendimento óptico completo para condomínios, igrejas, empresas e eventos. Óculos bonitos, lentes de qualidade e preço justo — sem você precisar sair de perto de casa.</p>
-      <div class="hero-ctas">
+      <p class="eyebrow eyebrow-light intro" style="--d:0"><span class="dot"></span> Ótica independente que vai até você</p>
+      <h1 class="hero-title"><span class="w" style="--d:1">Enxergar</span> <span class="w" style="--d:2">bem</span> <span class="w grad-text" style="--d:3">mais perto</span> <span class="w" style="--d:4">de</span> <span class="w" style="--d:5">você.</span></h1>
+      <p class="lead intro" style="--d:6">Levamos atendimento óptico completo para condomínios, igrejas, empresas e eventos. Óculos bonitos, lentes de qualidade e preço justo — sem você precisar sair de perto de casa.</p>
+      <div class="hero-ctas intro" style="--d:7">
         <a href="#loja" class="btn btn-primary btn-lg">Comprar óculos <svg class="ic"><use href="#i-arrow"/></svg></a>
         <a href="#agendar" class="btn btn-outline-light btn-lg">Levar a campanha ao meu local</a>
       </div>
-      <ul class="hero-trust" aria-label="Diferenciais">
+      <ul class="hero-trust intro" style="--d:8" aria-label="Diferenciais">
         <li><svg class="ic"><use href="#i-card"/></svg> Parcelamento no cartão</li>
         <li><svg class="ic"><use href="#i-shield"/></svg> Garantia em armação e lentes</li>
         <li><svg class="ic"><use href="#i-truck"/></svg> Entrega ou retirada na campanha</li>
@@ -133,11 +134,26 @@
 <!-- ============ CAMPANHAS ============ -->
 <section class="section" id="campanhas">
   <div class="container">
-    <header class="section-head">
-      <p class="eyebrow">Campanhas de saúde visual</p>
-      <h2>A ótica vai até a sua comunidade</h2>
-      <p class="section-sub">Montamos um ponto de atendimento completo no seu espaço, com mostruário de armações, orientação personalizada e condições especiais para quem participa.</p>
-    </header>
+    <div class="campaign-top">
+      <header class="section-head reveal">
+        <p class="eyebrow">Campanhas de saúde visual</p>
+        <h2>A ótica vai até a sua comunidade</h2>
+        <p class="section-sub">Montamos um ponto de atendimento completo no seu espaço, com mostruário de armações, orientação personalizada e condições especiais para quem participa.</p>
+        <a href="#agendar" class="btn btn-primary">Quero uma campanha <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </header>
+      <div class="mosaic">
+        <figure class="mosaic-a reveal reveal-clip">
+          <img src="assets/fotos/comunidade.webp" alt="Crianças sorrindo juntas em uma ação comunitária" width="800" height="880" loading="lazy" decoding="async">
+        </figure>
+        <figure class="mosaic-b reveal reveal-clip">
+          <img src="assets/fotos/atendimento.webp" alt="Profissional de óculos analisando um exame" width="1000" height="750" loading="lazy" decoding="async">
+        </figure>
+        <div class="mosaic-badge reveal">
+          <span class="fc-icon"><svg class="ic"><use href="#i-glasses"/></svg></span>
+          <span><strong>Estrutura completa</strong><small>Mostruário e atendimento no local</small></span>
+        </div>
+      </div>
+    </div>
 
     <div class="places">
       <article class="place reveal">
@@ -167,7 +183,7 @@
 <!-- ============ LOJA ============ -->
 <section class="section section-tint" id="loja">
   <div class="container">
-    <header class="section-head section-head-row">
+    <header class="section-head section-head-row reveal">
       <div>
         <p class="eyebrow">Loja Rede Visual</p>
         <h2>Escolha seus óculos</h2>
@@ -191,12 +207,13 @@
 <!-- ============ COMO FUNCIONA ============ -->
 <section class="section" id="como-funciona">
   <div class="container">
-    <header class="section-head">
+    <header class="section-head reveal">
       <p class="eyebrow">Como funciona</p>
       <h2>Do agendamento aos óculos no rosto</h2>
     </header>
 
     <ol class="steps">
+      <li class="steps-line" aria-hidden="true"></li>
       <li class="step reveal">
         <span class="step-num">01</span>
         <h3>Agende a campanha</h3>
@@ -225,7 +242,7 @@
 <section class="section section-dark" id="diferenciais">
   <div class="hero-bg hero-bg-soft" aria-hidden="true"></div>
   <div class="container">
-    <header class="section-head">
+    <header class="section-head reveal">
       <p class="eyebrow eyebrow-light">Por que a Rede Visual</p>
       <h2>Ótica de verdade, com cuidado de perto</h2>
     </header>
@@ -266,6 +283,9 @@
         <li><svg class="ic"><use href="#i-check"/></svg> Material de divulgação pronto para a sua comunidade</li>
         <li><svg class="ic"><use href="#i-check"/></svg> Condições exclusivas para quem participa</li>
       </ul>
+      <figure class="agendar-photo reveal reveal-clip">
+        <img src="assets/fotos/familia.webp" alt="Família caminhando de mãos dadas em um campo" width="900" height="630" loading="lazy" decoding="async">
+      </figure>
     </div>
 
     <form class="card form" id="campaign-form" novalidate>
@@ -326,6 +346,11 @@
         <svg class="ic"><use href="#i-whatsapp"/></svg> Enviar pelo WhatsApp
       </button>
       <p class="form-note">Ao enviar, abriremos o WhatsApp com a mensagem pronta. Nada é enviado sem a sua confirmação.</p>
+      <div class="form-success" id="campaign-success" hidden>
+        <span class="done-icon"><svg class="ic"><use href="#i-check"/></svg></span>
+        <p><strong>Mensagem pronta!</strong> Se o WhatsApp não abriu sozinho, toque no botão abaixo para enviar.</p>
+        <a class="btn btn-whats btn-block" id="campaign-link" href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-whatsapp"/></svg> Abrir WhatsApp</a>
+      </div>
     </form>
   </div>
 </section>
@@ -333,7 +358,7 @@
 <!-- ============ FAQ ============ -->
 <section class="section section-tint" id="duvidas">
   <div class="container container-narrow">
-    <header class="section-head">
+    <header class="section-head reveal">
       <p class="eyebrow">Dúvidas frequentes</p>
       <h2>Ficou alguma pergunta?</h2>
     </header>
@@ -412,7 +437,7 @@
   </div>
   <div class="container footer-bottom">
     <span>© <span data-year></span> Ótica Rede Visual. Todos os direitos reservados.</span>
-    <span>Imagens meramente ilustrativas.</span>
+    <span>Imagens ilustrativas · Fotos: Unsplash</span>
   </div>
 </footer>
 
