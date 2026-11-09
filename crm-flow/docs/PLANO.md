@@ -1,4 +1,4 @@
-# Logan Simulador: plano e mapeamento da planilha
+# CRM Flow: plano e mapeamento da planilha
 
 ## 1. Fórmulas da planilha original (`Fluxo_de_Pagamento_-_Modelo.xlsx`)
 
@@ -50,7 +50,7 @@ Valores fixos nos três casos: G6 = 1.800, J12 = 215.000, G11 = 50.000, F13 = 4,
 ## 4. Estrutura de pastas
 
 ```
-logan-simulador/
+crm-flow/
 ├── app/
 │   ├── (auth)/login, (auth)/cadastro     # telas públicas
 │   ├── (app)/page.tsx                    # dashboard (simulações recentes)

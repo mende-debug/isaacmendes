@@ -31,7 +31,7 @@ export function Proposta({ id, f, consultor }: { id: string; f: FluxoInput; cons
       if (compartilhar) {
         const arquivo = new File([doc.output("blob")], nome, { type: "application/pdf" });
         if (navigator.canShare?.({ files: [arquivo] })) {
-          await navigator.share({ files: [arquivo], title: "Proposta Logan" });
+          await navigator.share({ files: [arquivo], title: "Proposta CRM Flow" });
           return;
         }
       }

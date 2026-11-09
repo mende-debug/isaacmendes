@@ -1,10 +1,10 @@
-# Blueprint da Render para o Logan Simulador (app em ./logan-simulador).
+# Blueprint da Render para o CRM Flow (app em ./crm-flow).
 # SQLite precisa de disco persistente, disponível a partir do plano Starter.
 services:
   - type: web
-    name: logan-simulador
+    name: crm-flow
     runtime: node
-    rootDir: logan-simulador
+    rootDir: crm-flow
     plan: starter
     buildCommand: npm ci && npm run build
     startCommand: npm start
@@ -13,12 +13,12 @@ services:
       - key: NODE_VERSION
         value: "22"
       - key: DATABASE_URL
-        value: file:/var/data/logan.db
+        value: file:/var/data/crmflow.db
       - key: AUTH_SECRET
         generateValue: true
       - key: ALLOW_SIGNUP
         value: "true"
     disk:
-      name: logan-data
+      name: crmflow-data
       mountPath: /var/data
       sizeGB: 1

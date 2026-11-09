@@ -1,6 +1,6 @@
-// Service worker do Logan Simulador: arquivos estáticos em cache e
+// Service worker do CRM Flow: arquivos estáticos em cache e
 // páginas com "rede primeiro" (cai para a última versão salva quando offline).
-const CACHE = "logan-v1";
+const CACHE = "crmflow-v1";
 const OFFLINE = "/offline";
 
 self.addEventListener("install", (event) => {

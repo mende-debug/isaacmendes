@@ -1,5 +1,5 @@
 /**
- * Logan Simulador — motor de cálculo do fluxo de pagamento.
+ * CRM Flow — motor de cálculo do fluxo de pagamento.
  *
  * Replica a planilha "Fluxo de Pagamento - Modelo.xlsx" (referências de
  * célula nos comentários) e corrige os problemas dela:
@@ -10,7 +10,7 @@
  *  - a sugestão de mensal (I17) considera a mensal já digitada.
  *
  * Arquivo sem dependências (nem React, nem Next), pensado para ser copiado ou
- * importado em outros sistemas (ex.: CRM Logan).
+ * importado em outros sistemas (ex.: outro CRM).
  */
 
 export type Modalidade = "MCMV" | "SBPE";
@@ -747,7 +747,7 @@ export const RODAPE_PROPOSTA =
 export function gerarResumoTexto(input: FluxoInput, r: FluxoResultado = calcularFluxo(input)): string {
   const c = input.cliente;
   const linhas: string[] = [];
-  linhas.push("*LOGAN — Simulação de fluxo de pagamento*");
+  linhas.push("*CRM FLOW — Simulação de fluxo de pagamento*");
   if (c.nome) linhas.push(`Cliente: ${c.nome}`);
   if (c.empreendimento || c.unidade) linhas.push(`Imóvel: ${[c.empreendimento, c.unidade && `unidade ${c.unidade}`].filter(Boolean).join(" — ")}`);
   linhas.push("");

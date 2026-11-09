@@ -26,10 +26,10 @@ export function nomeArquivoProposta(f: FluxoInput) {
     .replace(/[^a-zA-Z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
     .toLowerCase();
-  return `proposta-logan-${base || "simulacao"}.pdf`;
+  return `proposta-crmflow-${base || "simulacao"}.pdf`;
 }
 
-/** Gera a proposta em PDF (A4) com a marca Logan. */
+/** Gera a proposta em PDF (A4) com a marca CRM Flow. */
 export function gerarPropostaPdf(f: FluxoInput, opcoes: { consultor?: string; data?: Date } = {}): jsPDF {
   const r = calcularFluxo(f);
   const doc: DocComTabela = new jsPDF({ unit: "mm", format: "a4" });
@@ -46,9 +46,9 @@ export function gerarPropostaPdf(f: FluxoInput, opcoes: { consultor?: string; da
   doc.setTextColor(255, 255, 255);
   doc.setFont("helvetica", "bold");
   doc.setFontSize(13);
-  doc.text("L", M + 7, 17.4, { align: "center" });
+  doc.text("F", M + 7, 17.4, { align: "center" });
   doc.setFontSize(18);
-  doc.text("Logan", M + 18, 14.5);
+  doc.text("CRM Flow", M + 18, 14.5);
   doc.setFont("helvetica", "normal");
   doc.setFontSize(9);
   doc.setTextColor(196, 181, 253);
@@ -168,7 +168,7 @@ export function gerarPropostaPdf(f: FluxoInput, opcoes: { consultor?: string; da
     doc.setTextColor(...CINZA);
     doc.text(doc.splitTextToSize(RODAPE_PROPOSTA, W - 2 * M), M, H - 19);
     doc.setFont("helvetica", "normal");
-    doc.text(`Logan Simulador · página ${p} de ${paginas}`, W - M, H - 8, { align: "right" });
+    doc.text(`CRM Flow · página ${p} de ${paginas}`, W - M, H - 8, { align: "right" });
   }
   return doc;
 }

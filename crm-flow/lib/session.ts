@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { cache } from "react";
 import { prisma } from "./db";
 
-export const SESSION_COOKIE = "logan_session";
+export const SESSION_COOKIE = "crmflow_session";
 const MAX_AGE = 60 * 60 * 24 * 30; // 30 dias
 
 function secret() {

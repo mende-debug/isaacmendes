@@ -3,10 +3,10 @@ import { RegistrarServiceWorker } from "@/components/RegistrarServiceWorker";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: { default: "Logan Simulador", template: "%s · Logan Simulador" },
+  title: { default: "CRM Flow", template: "%s · CRM Flow" },
   description: "Simulador de fluxo de pagamento para imóveis na planta (Caixa / MCMV / SBPE)",
-  applicationName: "Logan Simulador",
-  appleWebApp: { capable: true, title: "Logan", statusBarStyle: "black-translucent" },
+  applicationName: "CRM Flow",
+  appleWebApp: { capable: true, title: "CRM Flow", statusBarStyle: "black-translucent" },
   icons: { icon: "/icons/favicon-48.png", apple: "/icons/apple-touch-icon.png" },
 };
 

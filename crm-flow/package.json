@@ -1,8 +1,8 @@
 {
-  "name": "logan-simulador",
+  "name": "crm-flow",
   "version": "1.0.0",
   "private": true,
-  "description": "Logan Simulador — simulador de fluxo de pagamento para imóveis na planta (Caixa / MCMV / SBPE)",
+  "description": "CRM Flow — simulador de fluxo de pagamento para imóveis na planta (Caixa / MCMV / SBPE)",
   "scripts": {
     "dev": "next dev",
     "build": "prisma generate && next build",

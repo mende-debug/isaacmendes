@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Logan Simulador",
-    short_name: "Logan",
+    name: "CRM Flow",
+    short_name: "CRM Flow",
     description: "Simulador de fluxo de pagamento para imóveis na planta",
     start_url: "/",
     scope: "/",

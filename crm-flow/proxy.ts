@@ -8,7 +8,7 @@ export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   if (PUBLICAS.some((p) => pathname.startsWith(p))) return NextResponse.next();
 
-  const token = request.cookies.get("logan_session")?.value;
+  const token = request.cookies.get("crmflow_session")?.value;
   if (token) {
     try {
       const secret = new TextEncoder().encode(process.env.AUTH_SECRET ?? "dev-secret-nao-use-em-producao");
