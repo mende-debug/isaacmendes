@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ótica Rede Visual — Óculos e campanhas de saúde visual</title>
-<meta name="description" content="Ótica Rede Visual: óculos de grau, óculos de sol e lentes com preço justo. Levamos campanhas de saúde visual até condomínios, igrejas, empresas e eventos.">
+<title>Rede Visual+ — Campanhas de saúde visual</title>
+<meta name="description" content="Rede Visual+: campanhas itinerantes de saúde visual em empresas, igrejas, associações e instituições sociais. Exame de vista computadorizado, armação gratuita na compra das lentes e nenhum custo para a instituição.">
 <meta name="theme-color" content="#001a55">
-<meta property="og:title" content="Ótica Rede Visual">
-<meta property="og:description" content="Óculos de qualidade e campanhas de saúde visual que vão até você.">
+<meta property="og:title" content="Rede Visual+">
+<meta property="og:description" content="O olhar que conecta saúde e bem-estar. Campanhas de saúde visual gratuitas para instituições.">
 <meta property="og:image" content="assets/logo-rede-visual.png">
 <meta property="og:locale" content="pt_BR">
 <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -23,13 +23,10 @@
 <!-- Ícones (sprite) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></symbol>
     <symbol id="i-church" viewBox="0 0 24 24"><path d="M10 9h4M12 7v5M14 22v-4a2 2 0 0 0-4 0v4"/><path d="M18 22V5.618a1 1 0 0 0-.553-.894l-4.553-2.277a2 2 0 0 0-1.788 0L6.553 4.724A1 1 0 0 0 6 5.618V22"/><path d="m18 7 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9.382a1 1 0 0 1 .553-.894L6 7"/></symbol>
-    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></symbol>
     <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
     <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
     <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></symbol>
-    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2M15 18H9M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
     <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
     <symbol id="i-glasses" viewBox="0 0 24 24"><circle cx="6" cy="15" r="4"/><circle cx="18" cy="15" r="4"/><path d="M14 15a2 2 0 0 0-2-1 2 2 0 0 0-2 1M2.5 13 5 7c.7-1.3 1.4-2 3-2M21.5 13 19 7c-.7-1.3-1.5-2-3-2"/></symbol>
@@ -38,9 +35,16 @@
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
     <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
     <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></symbol>
     <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+    <symbol id="i-school" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></symbol>
   </defs>
 </svg>
 
@@ -50,7 +54,7 @@
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="topo">
   <div class="container header-inner">
-    <a class="brand" href="#topo" aria-label="Ótica Rede Visual — início">
+    <a class="brand" href="#topo" aria-label="Rede Visual+ — início">
       <img src="assets/logo-rede-visual-180.png" alt="" width="44" height="44">
       <span class="brand-text">
         <span class="brand-kicker">Ótica</span>
@@ -59,9 +63,10 @@
     </a>
 
     <nav class="main-nav" id="main-nav" aria-label="Principal">
+      <a href="#quem-somos">Quem somos</a>
       <a href="#campanhas">Campanhas</a>
-      <a href="#modelos">Modelos</a>
-      <a href="#como-funciona">Como funciona</a>
+      <a href="#armacoes">Armações</a>
+      <a href="#embaixadores">Embaixadores</a>
       <a href="#duvidas">Dúvidas</a>
       <a href="#agendar" class="nav-cta-mobile">Agendar campanha</a>
     </nav>
@@ -82,17 +87,17 @@
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="container hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow eyebrow-light intro" style="--d:0"><span class="dot"></span> Ótica independente que vai até você</p>
-      <h1 class="hero-title"><span class="w" style="--d:1">Enxergar</span> <span class="w" style="--d:2">bem</span> <span class="w grad-text" style="--d:3">mais perto</span> <span class="w" style="--d:4">de</span> <span class="w" style="--d:5">você.</span></h1>
-      <p class="lead intro" style="--d:6">Levamos atendimento óptico completo para condomínios, igrejas, empresas e eventos. Óculos bonitos, lentes de qualidade e preço justo — sem você precisar sair de perto de casa.</p>
+      <p class="eyebrow eyebrow-light intro" style="--d:0"><span class="dot"></span> O olhar que conecta saúde e bem-estar</p>
+      <h1 class="hero-title"><span class="w" style="--d:1">Saúde</span> <span class="w" style="--d:2">visual</span> <span class="w grad-text" style="--d:3">acessível</span> <span class="w" style="--d:4">para</span> <span class="w" style="--d:5">todos.</span></h1>
+      <p class="lead intro" style="--d:6">Levamos campanhas itinerantes de saúde visual a empresas, igrejas, associações e instituições sociais, com exame de vista, armações gratuitas na compra das lentes e toda a estrutura necessária.</p>
       <div class="hero-ctas intro" style="--d:7">
-        <a href="#agendar" class="btn btn-primary btn-lg">Levar a campanha ao meu local <svg class="ic"><use href="#i-arrow"/></svg></a>
-        <a href="#modelos" class="btn btn-outline-light btn-lg">Ver modelos</a>
+        <a href="#agendar" class="btn btn-primary btn-lg">Agendar uma campanha <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <a href="#embaixadores" class="btn btn-outline-light btn-lg">Seja um embaixador</a>
       </div>
       <ul class="hero-trust intro" style="--d:8" aria-label="Diferenciais">
-        <li><svg class="ic"><use href="#i-card"/></svg> Parcelamento no cartão</li>
-        <li><svg class="ic"><use href="#i-shield"/></svg> Garantia em armação e lentes</li>
-        <li><svg class="ic"><use href="#i-truck"/></svg> Entrega ou retirada na campanha</li>
+        <li><svg class="ic"><use href="#i-monitor"/></svg> Exame de vista computadorizado</li>
+        <li><svg class="ic"><use href="#i-gift"/></svg> Armação gratuita na compra das lentes</li>
+        <li><svg class="ic"><use href="#i-shield"/></svg> Sem custo para a instituição</li>
       </ul>
     </div>
 
@@ -103,183 +108,71 @@
         <img src="assets/logo-rede-visual.png" alt="" width="480" height="480" class="orb-logo">
       </div>
       <div class="float-card fc-1">
-        <span class="fc-icon"><svg class="ic"><use href="#i-building"/></svg></span>
-        <span><strong>Campanha no condomínio</strong><small>Atendimento no seu prédio</small></span>
+        <span class="fc-icon"><svg class="ic"><use href="#i-users"/></svg></span>
+        <span><strong>+150 clientes</strong><small>atendidos nas campanhas</small></span>
       </div>
       <div class="float-card fc-2">
-        <span class="fc-icon fc-icon-green"><svg class="ic"><use href="#i-check"/></svg></span>
-        <span><strong>Óculos completo</strong><small>Armação + lentes</small></span>
+        <span class="fc-icon fc-icon-green"><svg class="ic"><use href="#i-glasses"/></svg></span>
+        <span><strong>+100 modelos</strong><small>de armações no catálogo</small></span>
       </div>
     </div>
   </div>
 
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>Condomínios</span><i>+</i><span>Igrejas</span><i>+</i><span>Empresas</span><i>+</i><span>Eventos</span><i>+</i><span>Escolas</span><i>+</i><span>Associações</span><i>+</i>
-      <span>Condomínios</span><i>+</i><span>Igrejas</span><i>+</i><span>Empresas</span><i>+</i><span>Eventos</span><i>+</i><span>Escolas</span><i>+</i><span>Associações</span><i>+</i>
+      <span>Empresas</span><i>+</i><span>Igrejas</span><i>+</i><span>Associações</span><i>+</i><span>Instituições sociais</span><i>+</i><span>Escolas</span><i>+</i><span>Comércios</span><i>+</i><span>Condomínios</span><i>+</i>
+      <span>Empresas</span><i>+</i><span>Igrejas</span><i>+</i><span>Associações</span><i>+</i><span>Instituições sociais</span><i>+</i><span>Escolas</span><i>+</i><span>Comércios</span><i>+</i><span>Condomínios</span><i>+</i>
     </div>
   </div>
 </section>
 
-<!-- ============ CAMPANHAS ============ -->
-<section class="section" id="campanhas">
+<!-- ============ QUEM SOMOS ============ -->
+<section class="section" id="quem-somos">
   <div class="container">
-    <div class="campaign-top">
+    <div class="about-grid">
       <header class="section-head reveal">
-        <p class="eyebrow">Campanhas de saúde visual</p>
-        <h2>A ótica vai até a sua comunidade</h2>
-        <p class="section-sub">Montamos um ponto de atendimento completo no seu espaço, com mostruário de armações, orientação personalizada e condições especiais para quem participa.</p>
-        <a href="#agendar" class="btn btn-primary">Quero uma campanha <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <p class="eyebrow">Quem somos</p>
+        <h2>Uma ponte entre saúde e inclusão social</h2>
+        <p class="section-sub">A Rede Visual+ é uma iniciativa dedicada a promover o acesso à saúde ocular de forma acessível e socialmente responsável. Atuamos por meio de campanhas itinerantes de saúde visual, realizadas em parceria com empresas, igrejas, associações e instituições sociais.</p>
+        <p class="section-sub">Levamos cuidado ocular a quem mais precisa, com qualidade, empatia e compromisso.</p>
       </header>
-      <div class="mosaic">
-        <figure class="mosaic-a reveal reveal-clip">
-          <img src="assets/fotos/comunidade.webp" alt="Crianças sorrindo juntas em uma ação comunitária" width="800" height="880" loading="lazy" decoding="async">
-        </figure>
-        <figure class="mosaic-b reveal reveal-clip">
-          <img src="assets/fotos/atendimento.webp" alt="Profissional de óculos analisando um exame" width="1000" height="750" loading="lazy" decoding="async">
-        </figure>
-        <div class="mosaic-badge reveal">
-          <span class="fc-icon"><svg class="ic"><use href="#i-glasses"/></svg></span>
-          <span><strong>Estrutura completa</strong><small>Mostruário e atendimento no local</small></span>
-        </div>
+
+      <div class="founders">
+        <p class="founders-title reveal">Idealizadores</p>
+        <article class="founder reveal">
+          <img src="assets/real/davi.webp" alt="Davi Laureano" width="480" height="480" loading="lazy" decoding="async">
+          <div>
+            <h3>Davi Laureano</h3>
+            <p>Mais de 5 anos de experiência no ramo óptico</p>
+          </div>
+        </article>
+        <article class="founder reveal">
+          <img src="assets/real/elizabeth.webp" alt="Elizabeth Mendes" width="480" height="480" loading="lazy" decoding="async">
+          <div>
+            <h3>Elizabeth Mendes</h3>
+            <p>Experiência em gestão de projetos em saúde</p>
+          </div>
+        </article>
       </div>
     </div>
 
-    <div class="places">
-      <article class="place reveal">
-        <span class="place-icon"><svg class="ic"><use href="#i-building"/></svg></span>
-        <h3>Condomínios</h3>
-        <p>Atendimento no salão de festas ou área comum. Moradores escolhem os óculos sem sair de casa.</p>
+    <div class="pmv">
+      <article class="pmv-item reveal">
+        <span class="place-icon"><svg class="ic"><use href="#i-heart"/></svg></span>
+        <h3>Propósito</h3>
+        <p>Transformar vidas tornando a saúde visual acessível a todos.</p>
       </article>
-      <article class="place reveal">
-        <span class="place-icon"><svg class="ic"><use href="#i-church"/></svg></span>
-        <h3>Igrejas</h3>
-        <p>Campanhas após os cultos e encontros, cuidando da visão de toda a comunidade e das famílias.</p>
+      <article class="pmv-item reveal">
+        <span class="place-icon"><svg class="ic"><use href="#i-flag"/></svg></span>
+        <h3>Missão</h3>
+        <p>Promover a saúde visual e o bem-estar com qualidade e acessibilidade, tornando-nos referência no segmento.</p>
       </article>
-      <article class="place reveal">
-        <span class="place-icon"><svg class="ic"><use href="#i-briefcase"/></svg></span>
-        <h3>Empresas</h3>
-        <p>Ação de saúde para colaboradores, ideal para semanas de SIPAT, RH e programas de bem-estar.</p>
-      </article>
-      <article class="place reveal">
-        <span class="place-icon"><svg class="ic"><use href="#i-calendar"/></svg></span>
-        <h3>Eventos e escolas</h3>
-        <p>Estande em feiras, festas comunitárias, associações e escolas. Levamos toda a estrutura.</p>
+      <article class="pmv-item reveal">
+        <span class="place-icon"><svg class="ic"><use href="#i-eye"/></svg></span>
+        <h3>Visão</h3>
+        <p>Inspirar e transformar o país por meio de campanhas de saúde visual de alta qualidade e impacto social.</p>
       </article>
     </div>
-  </div>
-</section>
-
-<!-- ============ MOSTRUÁRIO ============ -->
-<section class="section section-tint" id="modelos">
-  <div class="container">
-    <header class="section-head section-head-row reveal">
-      <div>
-        <p class="eyebrow">Mostruário</p>
-        <h2>Modelos que levamos até você</h2>
-        <p class="section-sub">Armações de grau, óculos de sol e lentes para toda a família. Na campanha, você experimenta tudo pessoalmente, com a orientação da nossa equipe.</p>
-      </div>
-      <a href="#agendar" class="btn btn-primary">Agendar uma campanha <svg class="ic"><use href="#i-arrow"/></svg></a>
-    </header>
-
-    <div class="looks">
-      <figure class="look reveal look-big">
-        <img src="assets/fotos/gatinho-elegance.webp" alt="Mulher sorrindo com óculos grande de armação verde" width="800" height="600" loading="lazy" decoding="async">
-        <figcaption><span>Grau</span>Gatinho marcante</figcaption>
-      </figure>
-      <figure class="look reveal">
-        <img src="assets/fotos/aviador-polarizado.webp" alt="Óculos de sol aviador dourado com lentes marrons" width="800" height="600" loading="lazy" decoding="async">
-        <figcaption><span>Sol</span>Aviador polarizado</figcaption>
-      </figure>
-      <figure class="look reveal">
-        <img src="assets/fotos/linha-essencial.webp" alt="Óculos redondo de metal fino sobre fundo claro" width="800" height="600" loading="lazy" decoding="async">
-        <figcaption><span>Grau</span>Metal fino</figcaption>
-      </figure>
-      <figure class="look reveal">
-        <img src="assets/fotos/retro-redondo.webp" alt="Óculos de sol redondo dourado com lentes verdes" width="800" height="600" loading="lazy" decoding="async">
-        <figcaption><span>Sol</span>Retrô redondo</figcaption>
-      </figure>
-      <figure class="look reveal">
-        <img src="assets/fotos/oval-tartaruga.webp" alt="Óculos oval tartaruga sobre um livro" width="800" height="600" loading="lazy" decoding="async">
-        <figcaption><span>Grau</span>Oval tartaruga</figcaption>
-      </figure>
-      <figure class="look reveal">
-        <img src="assets/fotos/urban-sol.webp" alt="Óculos de sol preto com lentes degradê" width="800" height="600" loading="lazy" decoding="async">
-        <figcaption><span>Sol</span>Clássico escuro</figcaption>
-      </figure>
-      <figure class="look reveal">
-        <img src="assets/fotos/executivo-quadrado.webp" alt="Homem de terno usando óculos quadrado preto" width="800" height="600" loading="lazy" decoding="async">
-        <figcaption><span>Grau</span>Quadrado executivo</figcaption>
-      </figure>
-      <figure class="look reveal">
-        <img src="assets/fotos/gatinho-sol.webp" alt="Óculos de sol gatinho com armação nude" width="800" height="600" loading="lazy" decoding="async">
-        <figcaption><span>Sol</span>Gatinho degradê</figcaption>
-      </figure>
-      <figure class="look reveal">
-        <img src="assets/fotos/classico-redondo.webp" alt="Homem usando óculos de grau com armação preta" width="800" height="600" loading="lazy" decoding="async">
-        <figcaption><span>Grau</span>Acetato preto</figcaption>
-      </figure>
-      <figure class="look reveal look-big">
-        <img src="assets/fotos/espelhado.webp" alt="Mulher usando óculos de sol com lentes espelhadas laranja" width="800" height="600" loading="lazy" decoding="async">
-        <figcaption><span>Sol</span>Lentes espelhadas</figcaption>
-      </figure>
-    </div>
-
-    <h3 class="sub-title reveal">Lentes para cada rotina</h3>
-    <div class="lenses">
-      <article class="lens reveal">
-        <img src="assets/fotos/lente-antirreflexo.webp" alt="Homem usando óculos com lentes sem reflexo" width="800" height="600" loading="lazy" decoding="async">
-        <div><h3>Antirreflexo</h3><p>Menos reflexos e mais nitidez em telas e à noite.</p></div>
-      </article>
-      <article class="lens reveal">
-        <img src="assets/fotos/lente-luz-azul.webp" alt="Mulher trabalhando em frente a monitores" width="800" height="600" loading="lazy" decoding="async">
-        <div><h3>Filtro de luz azul</h3><p>Conforto para quem passa horas no celular e no computador.</p></div>
-      </article>
-      <article class="lens reveal">
-        <img src="assets/fotos/lente-fotossensivel.webp" alt="Óculos escuros sobre a areia da praia" width="800" height="600" loading="lazy" decoding="async">
-        <div><h3>Fotossensível</h3><p>Escurece no sol e clareia em ambientes internos.</p></div>
-      </article>
-      <article class="lens reveal">
-        <img src="assets/fotos/lente-multifocal.webp" alt="Óculos de leitura sobre um livro" width="800" height="600" loading="lazy" decoding="async">
-        <div><h3>Multifocal</h3><p>Longe, intermediário e perto em uma única lente.</p></div>
-      </article>
-    </div>
-
-    <p class="fineprint">Imagens ilustrativas. Modelos e cores disponíveis variam a cada campanha.</p>
-  </div>
-</section>
-
-<!-- ============ COMO FUNCIONA ============ -->
-<section class="section" id="como-funciona">
-  <div class="container">
-    <header class="section-head reveal">
-      <p class="eyebrow">Como funciona</p>
-      <h2>Do agendamento aos óculos no rosto</h2>
-    </header>
-
-    <ol class="steps">
-      <li class="steps-line" aria-hidden="true"></li>
-      <li class="step reveal">
-        <span class="step-num">01</span>
-        <h3>Agende a campanha</h3>
-        <p>O síndico, pastor ou responsável pelo evento fala com a gente e escolhemos juntos a melhor data.</p>
-      </li>
-      <li class="step reveal">
-        <span class="step-num">02</span>
-        <h3>Divulgamos para você</h3>
-        <p>Enviamos o material de divulgação pronto para grupos, murais e avisos da comunidade.</p>
-      </li>
-      <li class="step reveal">
-        <span class="step-num">03</span>
-        <h3>Atendimento no local</h3>
-        <p>Nossa equipe orienta cada pessoa na escolha da armação e das lentes certas para a sua receita.</p>
-      </li>
-      <li class="step reveal">
-        <span class="step-num">04</span>
-        <h3>Óculos prontos</h3>
-        <p>Entregamos no endereço combinado ou na própria comunidade, já ajustados ao rosto.</p>
-      </li>
-    </ol>
   </div>
 </section>
 
@@ -288,30 +181,210 @@
   <div class="hero-bg hero-bg-soft" aria-hidden="true"></div>
   <div class="container">
     <header class="section-head reveal">
-      <p class="eyebrow eyebrow-light">Por que a Rede Visual</p>
-      <h2>Ótica de verdade, com cuidado de perto</h2>
+      <p class="eyebrow eyebrow-light">Nossos diferenciais</p>
+      <h2>Cuidado completo, do exame à armação</h2>
     </header>
     <div class="features">
       <div class="feature reveal">
-        <svg class="ic"><use href="#i-eye"/></svg>
-        <h3>Orientação especializada</h3>
-        <p>Ajudamos você a entender sua receita e escolher a lente ideal para a sua rotina.</p>
+        <svg class="ic"><use href="#i-monitor"/></svg>
+        <h3>Exame de vista computadorizado</h3>
+        <p>Realizado no local, com profissionais qualificados.</p>
+      </div>
+      <div class="feature reveal">
+        <svg class="ic"><use href="#i-gift"/></svg>
+        <h3>Armações gratuitas</h3>
+        <p>Na aquisição das lentes corretivas, a armação sai sem custo.</p>
       </div>
       <div class="feature reveal">
         <svg class="ic"><use href="#i-card"/></svg>
-        <h3>Preço que cabe no bolso</h3>
-        <p>Condições especiais para campanhas e parcelamento no cartão de crédito.</p>
-      </div>
-      <div class="feature reveal">
-        <svg class="ic"><use href="#i-shield"/></svg>
-        <h3>Garantia e ajustes</h3>
-        <p>Acompanhamos você depois da compra, com ajustes e suporte sempre que precisar.</p>
+        <h3>Condições acessíveis</h3>
+        <p>Valores que cabem no bolso para a confecção das lentes.</p>
       </div>
       <div class="feature reveal">
         <svg class="ic"><use href="#i-users"/></svg>
-        <h3>Para toda a família</h3>
-        <p>Modelos infantis, femininos, masculinos e lentes para todas as idades.</p>
+        <h3>Projetos sociais</h3>
+        <p>Apoiamos as instituições parceiras e os seus membros.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAMPANHAS ============ -->
+<section class="section" id="campanhas">
+  <div class="container">
+    <header class="section-head section-head-row reveal">
+      <div>
+        <p class="eyebrow">Nossas campanhas</p>
+        <h2>A ótica vai até a sua instituição</h2>
+        <p class="section-sub">Montamos o atendimento completo no seu espaço: avaliação visual, mostruário de armações e orientação para cada pessoa.</p>
+      </div>
+      <div class="stat reveal">
+        <strong>+150</strong>
+        <span>clientes atendidos</span>
+      </div>
+    </header>
+
+    <div class="gallery">
+      <figure class="gal gal-big reveal reveal-clip"><img src="assets/real/exame-crianca.webp" alt="Profissional da Rede Visual+ examinando a visão de uma criança" width="1200" height="1025" loading="lazy" decoding="async"></figure>
+      <figure class="gal reveal reveal-clip"><img src="assets/real/escolha-armacao.webp" alt="Atendente ajudando uma participante a escolher armações" width="480" height="640" loading="lazy" decoding="async"></figure>
+      <figure class="gal reveal reveal-clip"><img src="assets/real/estande.webp" alt="Estande da campanha com armações expostas" width="546" height="728" loading="lazy" decoding="async"></figure>
+      <figure class="gal reveal reveal-clip"><img src="assets/real/avaliacao.webp" alt="Avaliação visual de uma participante" width="390" height="520" loading="lazy" decoding="async"></figure>
+      <figure class="gal reveal reveal-clip"><img src="assets/real/mesa-armacoes.webp" alt="Participantes escolhendo armações na mesa de atendimento" width="509" height="382" loading="lazy" decoding="async"></figure>
+    </div>
+
+    <div class="places">
+      <article class="place reveal">
+        <span class="place-icon"><svg class="ic"><use href="#i-briefcase"/></svg></span>
+        <h3>Empresas e comércios</h3>
+        <p>Ação de saúde para colaboradores, no próprio ambiente de trabalho.</p>
+      </article>
+      <article class="place reveal">
+        <span class="place-icon"><svg class="ic"><use href="#i-church"/></svg></span>
+        <h3>Igrejas</h3>
+        <p>Cuidado com a visão de toda a comunidade e das famílias.</p>
+      </article>
+      <article class="place reveal">
+        <span class="place-icon"><svg class="ic"><use href="#i-school"/></svg></span>
+        <h3>Escolas e instituições</h3>
+        <p>Associações, ONGs e instituições sociais parceiras.</p>
+      </article>
+      <article class="place reveal">
+        <span class="place-icon"><svg class="ic"><use href="#i-home"/></svg></span>
+        <h3>Atendimento domiciliar</h3>
+        <p>Também levamos o atendimento até a casa de quem precisa.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPTOMETRISTA ============ -->
+<section class="section section-tint" id="optometrista">
+  <div class="container opto">
+    <figure class="opto-photo reveal reveal-clip">
+      <img src="assets/real/optometrista.webp" alt="Optometrista realizando avaliação visual com refrator" width="1100" height="732" loading="lazy" decoding="async">
+    </figure>
+    <div class="opto-copy reveal">
+      <p class="eyebrow">Optometrista</p>
+      <h2>Avaliação primária da saúde da visão</h2>
+      <p class="section-sub">Contamos com um especialista qualificado para avaliar a sua saúde visual e identificar possíveis ametropias.</p>
+      <ul class="tags" aria-label="Ametropias identificadas">
+        <li>Miopia</li>
+        <li>Hipermetropia</li>
+        <li>Astigmatismo</li>
+        <li>Presbiopia</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARMAÇÕES ============ -->
+<section class="section" id="armacoes">
+  <div class="container">
+    <header class="section-head section-head-row reveal">
+      <div>
+        <p class="eyebrow">Catálogo</p>
+        <h2>Mais de <span class="big-num">100</span> modelos de armações</h2>
+        <p class="section-sub">Na aquisição das lentes corretivas, a armação é gratuita. Veja alguns dos modelos que levamos às campanhas.</p>
+      </div>
+    </header>
+    <div class="frames">
+      <figure class="frame reveal"><img src="assets/real/armacao-1.webp" alt="Armação feminina metálica rosé" width="540" height="540" loading="lazy" decoding="async"></figure>
+      <figure class="frame reveal"><img src="assets/real/armacao-2.webp" alt="Armação de acetato tartaruga" width="540" height="540" loading="lazy" decoding="async"></figure>
+      <figure class="frame reveal"><img src="assets/real/armacao-3.webp" alt="Armação retangular escura" width="540" height="540" loading="lazy" decoding="async"></figure>
+      <figure class="frame reveal"><img src="assets/real/armacao-4.webp" alt="Armação redonda metálica dourada" width="540" height="540" loading="lazy" decoding="async"></figure>
+      <figure class="frame reveal"><img src="assets/real/armacao-5.webp" alt="Armação gatinho em acetato translúcido" width="540" height="540" loading="lazy" decoding="async"></figure>
+      <figure class="frame reveal"><img src="assets/real/armacao-6.webp" alt="Armação quadrada cinza translúcida" width="540" height="540" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INVESTIMENTO / COMO FUNCIONA ============ -->
+<section class="section section-tint" id="como-funciona">
+  <div class="container">
+    <div class="invest reveal">
+      <div>
+        <p class="eyebrow">Investimento</p>
+        <h2>Todas as campanhas são <span class="grad-text-dark">totalmente gratuitas</span> para a instituição.</h2>
+        <p class="section-sub">Oferecemos um especialista para a avaliação visual, armações gratuitas na compra das lentes e toda a estrutura necessária.</p>
+      </div>
+      <div class="req">
+        <h3>Quais os requisitos?</h3>
+        <ul class="checklist">
+          <li><svg class="ic"><use href="#i-check"/></svg> Disponibilizar o espaço para a ação</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Auxiliar na organização dos agendamentos prévios</li>
+        </ul>
+      </div>
+    </div>
+
+    <header class="section-head reveal">
+      <p class="eyebrow">Como funciona</p>
+      <h2>Do primeiro contato aos óculos no rosto</h2>
+    </header>
+    <ol class="steps">
+      <li class="steps-line" aria-hidden="true"></li>
+      <li class="step reveal">
+        <span class="step-num">01</span>
+        <h3>Agendamento</h3>
+        <p>A instituição entra em contato e combinamos a melhor data para a campanha.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-num">02</span>
+        <h3>Agendamentos prévios</h3>
+        <p>Com o apoio da instituição, organizamos os horários dos participantes.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-num">03</span>
+        <h3>Dia da campanha</h3>
+        <p>Exame de vista computadorizado e escolha da armação no próprio local.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-num">04</span>
+        <h3>Seus óculos</h3>
+        <p>As lentes são confeccionadas com condições acessíveis, e a armação sai gratuita.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ EMBAIXADORES ============ -->
+<section class="section emb" id="embaixadores">
+  <div class="emb-bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="emb-top">
+      <div class="emb-copy reveal">
+        <p class="eyebrow eyebrow-light">Projeto de impacto social</p>
+        <h2>Embaixadores da Visão<span class="plus">+</span></h2>
+        <p class="emb-tagline">Mais visão para mais possibilidades.</p>
+        <p class="emb-text">Uma rede de pessoas que conecta a Rede Visual+ a empresas, comércios, escolas, igrejas e outras instituições. O embaixador abre as portas e a Rede Visual+ cuida do resto: negociação, organização e realização da campanha.</p>
+      </div>
+      <div class="emb-meta reveal">
+        <span class="emb-eye" aria-hidden="true"><svg class="ic"><use href="#i-eye"/></svg></span>
+        <strong>2 a 5</strong>
+        <span class="emb-meta-label">óculos por campanha</span>
+        <p>para crianças de famílias em vulnerabilidade, selecionadas com apoio de ONGs parceiras, quando houver indicação após a avaliação visual.</p>
+        <small>Meta inicial sugerida, conforme a regra final aprovada e os recursos disponíveis.</small>
+      </div>
+    </div>
+
+    <ol class="emb-flow">
+      <li class="reveal"><span>1</span><strong>Embaixador</strong> conecta um novo local</li>
+      <li class="reveal"><span>2</span><strong>Rede Visual+</strong> organiza a campanha</li>
+      <li class="reveal"><span>3</span><strong>Mais campanhas</strong> ampliam a capacidade de doação</li>
+      <li class="reveal"><span>4</span><strong>Crianças</strong> recebem óculos quando há indicação</li>
+    </ol>
+
+    <div class="emb-bottom reveal">
+      <div>
+        <h3>Quem pode ser embaixador?</h3>
+        <ul class="tags tags-dark">
+          <li>Lideranças comunitárias e religiosas</li>
+          <li>Empreendedores e profissionais liberais</li>
+          <li>Moradores e representantes de condomínios</li>
+          <li>Pessoas com contatos em empresas e comércios</li>
+          <li>Educadores e voluntários</li>
+        </ul>
+      </div>
+      <a class="btn btn-amber btn-lg" data-emb-link href="#" target="_blank" rel="noopener">Quero ser embaixador <svg class="ic"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 </section>
@@ -320,34 +393,34 @@
 <section class="section" id="agendar">
   <div class="container agendar-grid">
     <div class="agendar-copy">
-      <p class="eyebrow">Para síndicos, igrejas e organizadores</p>
-      <h2>Leve a campanha Rede Visual para o seu espaço</h2>
-      <p class="section-sub">Preencha os dados e nossa equipe responde pelo WhatsApp para combinar data, estrutura e divulgação.</p>
-      <ul class="checklist">
-        <li><svg class="ic"><use href="#i-check"/></svg> Levamos mostruário e toda a estrutura de atendimento</li>
-        <li><svg class="ic"><use href="#i-check"/></svg> Material de divulgação pronto para a sua comunidade</li>
-        <li><svg class="ic"><use href="#i-check"/></svg> Condições exclusivas para quem participa</li>
+      <p class="eyebrow">Entre em contato</p>
+      <h2>Faça o agendamento da sua campanha</h2>
+      <p class="section-sub">Preencha os dados e nossa equipe responde pelo WhatsApp para combinar a data e a organização.</p>
+      <ul class="contact-list">
+        <li><svg class="ic"><use href="#i-phone"/></svg><span><small>WhatsApp</small><a data-whats-link href="#" target="_blank" rel="noopener" data-whats-label>(11) 95583-6636</a></span></li>
+        <li><svg class="ic"><use href="#i-mail"/></svg><span><small>E-mail</small><a data-email-link href="mailto:redevisualmais@gmail.com">redevisualmais@gmail.com</a></span></li>
+        <li><svg class="ic"><use href="#i-instagram"/></svg><span><small>Instagram</small><a data-insta-link href="#" target="_blank" rel="noopener" data-insta-label>@redevisual</a></span></li>
       </ul>
       <figure class="agendar-photo reveal reveal-clip">
-        <img src="assets/fotos/familia.webp" alt="Família caminhando de mãos dadas em um campo" width="900" height="630" loading="lazy" decoding="async">
+        <img src="assets/real/atendimento.webp" alt="Atendimento a uma participante durante a campanha" width="546" height="728" loading="lazy" decoding="async">
       </figure>
     </div>
 
     <form class="card form" id="campaign-form" novalidate>
       <h3 class="form-title">Solicitar campanha</h3>
       <div class="field">
-        <span class="label" id="lbl-tipo">Tipo de local</span>
+        <span class="label" id="lbl-tipo">Tipo de instituição</span>
         <div class="seg" role="radiogroup" aria-labelledby="lbl-tipo">
-          <label><input type="radio" name="tipo" value="Condomínio" checked><span>Condomínio</span></label>
+          <label><input type="radio" name="tipo" value="Empresa / comércio" checked><span>Empresa</span></label>
           <label><input type="radio" name="tipo" value="Igreja"><span>Igreja</span></label>
-          <label><input type="radio" name="tipo" value="Empresa"><span>Empresa</span></label>
-          <label><input type="radio" name="tipo" value="Evento / escola"><span>Evento</span></label>
+          <label><input type="radio" name="tipo" value="Escola / associação / ONG"><span>Instituição</span></label>
+          <label><input type="radio" name="tipo" value="Outro"><span>Outro</span></label>
         </div>
       </div>
       <div class="field-row">
         <div class="field">
-          <label class="label" for="c-local">Nome do local</label>
-          <input class="input" id="c-local" name="local" required autocomplete="organization" placeholder="Ex.: Condomínio Jardim das Flores">
+          <label class="label" for="c-local">Nome da instituição</label>
+          <input class="input" id="c-local" name="local" required autocomplete="organization" placeholder="Ex.: Igreja Esperança">
           <small class="error" data-error-for="c-local"></small>
         </div>
         <div class="field">
@@ -385,7 +458,7 @@
       </div>
       <div class="field">
         <label class="label" for="c-msg">Observações <span class="opt">(opcional)</span></label>
-        <textarea class="input" id="c-msg" name="msg" rows="3" placeholder="Horários, espaço disponível, outras informações..."></textarea>
+        <textarea class="input" id="c-msg" name="msg" rows="3" placeholder="Espaço disponível, horários, outras informações..."></textarea>
       </div>
       <button class="btn btn-whats btn-lg btn-block" type="submit">
         <svg class="ic"><use href="#i-whatsapp"/></svg> Enviar pelo WhatsApp
@@ -410,28 +483,28 @@
 
     <div class="faq">
       <details>
-        <summary>A campanha tem custo para o condomínio ou para a igreja? <svg class="ic"><use href="#i-chevron"/></svg></summary>
-        <p>Não. A campanha é gratuita para o local que recebe. Você só precisa nos ceder um espaço para o atendimento — nós levamos o restante.</p>
+        <summary>A campanha tem algum custo para a instituição? <svg class="ic"><use href="#i-chevron"/></svg></summary>
+        <p>Não. Todas as campanhas são totalmente gratuitas para a instituição. Oferecemos um especialista para a avaliação visual, armações gratuitas na compra das lentes e toda a estrutura necessária.</p>
       </details>
       <details>
-        <summary>Preciso ter receita para comprar óculos de grau? <svg class="ic"><use href="#i-chevron"/></svg></summary>
-        <p>Sim, as lentes de grau são feitas a partir da sua receita. Leve a receita no dia da campanha ou envie uma foto pelo WhatsApp. Se ainda não tiver, fale com a gente que orientamos o melhor caminho.</p>
+        <summary>O que a instituição precisa fazer? <svg class="ic"><use href="#i-chevron"/></svg></summary>
+        <p>Apenas disponibilizar o espaço para a ação e ajudar na organização dos agendamentos prévios dos participantes.</p>
       </details>
       <details>
-        <summary>Quem pode participar da campanha? <svg class="ic"><use href="#i-chevron"/></svg></summary>
-        <p>Todos os moradores, membros, colaboradores ou convidados do local, além das famílias. Temos modelos infantis, femininos e masculinos.</p>
+        <summary>Quem faz o exame de vista? <svg class="ic"><use href="#i-chevron"/></svg></summary>
+        <p>Um optometrista qualificado, responsável pela avaliação primária da saúde da visão. O exame é computadorizado e identifica ametropias como miopia, hipermetropia, astigmatismo e presbiopia.</p>
       </details>
       <details>
-        <summary>Quais as formas de pagamento? <svg class="ic"><use href="#i-chevron"/></svg></summary>
-        <p>Pix, cartão de crédito com parcelamento e cartão de débito, direto com a nossa equipe durante a campanha.</p>
+        <summary>Como funciona a armação gratuita? <svg class="ic"><use href="#i-chevron"/></svg></summary>
+        <p>Na aquisição das lentes corretivas, a armação sai sem custo. Você escolhe entre mais de 100 modelos do nosso catálogo, e as lentes são feitas com condições acessíveis.</p>
       </details>
       <details>
-        <summary>Em quanto tempo os óculos ficam prontos? <svg class="ic"><use href="#i-chevron"/></svg></summary>
-        <p>O prazo depende do tipo de lente. Óculos de sol e armações saem na hora; lentes de grau são produzidas em laboratório e informamos o prazo exato no momento da compra.</p>
+        <summary>Vocês fazem atendimento em domicílio? <svg class="ic"><use href="#i-chevron"/></svg></summary>
+        <p>Sim. Além das campanhas, também realizamos atendimento domiciliar. Fale com a gente pelo WhatsApp para combinar.</p>
       </details>
       <details>
-        <summary>E se os óculos precisarem de ajuste? <svg class="ic"><use href="#i-chevron"/></svg></summary>
-        <p>Fazemos ajustes sem custo e oferecemos garantia em armações e lentes. É só chamar no WhatsApp.</p>
+        <summary>O que é o projeto Embaixadores da Visão+? <svg class="ic"><use href="#i-chevron"/></svg></summary>
+        <p>É a frente de impacto social da Rede Visual+. Pessoas da comunidade indicam novos locais para campanhas e, a cada campanha realizada, a meta é apoiar crianças de famílias em vulnerabilidade com óculos, quando houver indicação.</p>
       </details>
     </div>
   </div>
@@ -441,8 +514,8 @@
 <section class="cta-band">
   <div class="container cta-inner">
     <div>
-      <h2>Pronto para enxergar melhor?</h2>
-      <p>Fale com a Rede Visual e tire suas dúvidas agora mesmo.</p>
+      <h2>Vamos levar saúde visual até você?</h2>
+      <p>Fale com a Rede Visual+ e agende a campanha da sua instituição.</p>
     </div>
     <div class="cta-actions">
       <a class="btn btn-whats btn-lg" data-whats-link href="#" target="_blank" rel="noopener">
@@ -459,30 +532,31 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <img src="assets/logo-rede-visual-180.png" alt="Ótica Rede Visual" width="72" height="72">
-      <p>Ótica independente levando saúde visual a condomínios, igrejas, empresas e eventos.</p>
+      <img src="assets/real/wordmark-branco.png" alt="Ótica Rede Visual+" width="600" height="92" class="footer-wordmark">
+      <p>O olhar que conecta saúde e bem-estar. Campanhas itinerantes de saúde visual com qualidade, empatia e compromisso.</p>
     </div>
     <div>
       <h4>Navegue</h4>
       <ul>
+        <li><a href="#quem-somos">Quem somos</a></li>
         <li><a href="#campanhas">Campanhas</a></li>
-        <li><a href="#modelos">Modelos</a></li>
-        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#armacoes">Armações</a></li>
+        <li><a href="#embaixadores">Embaixadores da Visão+</a></li>
         <li><a href="#duvidas">Dúvidas</a></li>
       </ul>
     </div>
     <div>
       <h4>Contato</h4>
       <ul>
-        <li><a data-whats-link href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-whatsapp"/></svg> <span data-whats-label>WhatsApp</span></a></li>
-        <li><a data-insta-link href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-instagram"/></svg> <span data-insta-label>Instagram</span></a></li>
-        <li><span class="muted-inline"><svg class="ic"><use href="#i-pin"/></svg> <span data-city-label>Atendimento itinerante</span></span></li>
+        <li><a data-whats-link href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-whatsapp"/></svg> <span data-whats-label>(11) 95583-6636</span></a></li>
+        <li><a data-email-link href="mailto:redevisualmais@gmail.com"><svg class="ic"><use href="#i-mail"/></svg> redevisualmais@gmail.com</a></li>
+        <li><a data-insta-link href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-instagram"/></svg> <span data-insta-label>@redevisual</span></a></li>
       </ul>
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© <span data-year></span> Ótica Rede Visual. Todos os direitos reservados.</span>
-    <span>Imagens ilustrativas · Fotos: Unsplash</span>
+    <span>© <span data-year></span> Rede Visual+. Todos os direitos reservados.</span>
+    <span>O olhar que conecta saúde e bem-estar</span>
   </div>
 </footer>
 

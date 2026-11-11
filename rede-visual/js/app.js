@@ -9,12 +9,11 @@
      ------------------------------------------------------- */
   const CONFIG = {
     // Número com DDI + DDD, só dígitos. Ex.: "5511987654321"
-    whatsapp: "5500000000000",
-    whatsappLabel: "(00) 00000-0000",
+    whatsapp: "5511955836636",
+    whatsappLabel: "(11) 95583-6636",
     // Usuário do Instagram sem @ (deixe "" para esconder o link)
-    instagram: "",
-    // Texto do rodapé (cidade/região de atendimento)
-    regiao: "Atendimento itinerante na sua região",
+    instagram: "redevisual",
+    email: "redevisualmais@gmail.com",
   };
 
   /* -------------------------------------------------------
@@ -78,7 +77,7 @@
     e.preventDefault();
     const f = campaignForm;
     const ok = [
-      validateText(f.local, "o nome do local"),
+      validateText(f.local, "o nome da instituição"),
       validateText(f.bairro, "o bairro ou a cidade"),
       validateText(f.nome, "seu nome", 3),
       validatePhone(f.fone),
@@ -91,10 +90,10 @@
       data = `${d}/${m}/${y}`;
     }
     const msg = [
-      "Olá, Rede Visual! Gostaria de agendar uma campanha de saúde visual.",
+      "Olá, Rede Visual+! Gostaria de agendar uma campanha de saúde visual.",
       "",
-      `*Tipo de local:* ${f.tipo.value}`,
-      `*Local:* ${f.local.value.trim()}`,
+      `*Tipo de instituição:* ${f.tipo.value}`,
+      `*Instituição:* ${f.local.value.trim()}`,
       `*Bairro/cidade:* ${f.bairro.value.trim()}`,
       `*Responsável:* ${f.nome.value.trim()}`,
       `*WhatsApp:* ${f.fone.value.trim()}`,
@@ -114,15 +113,17 @@
   /* -------------------------------------------------------
      Contato e rodapé
      ------------------------------------------------------- */
-  const genericMsg = "Olá, Rede Visual! Vim pelo site e gostaria de mais informações.";
+  const genericMsg = "Olá, Rede Visual+! Vim pelo site e gostaria de mais informações.";
+  const embMsg = "Olá, Rede Visual+! Vim pelo site e quero saber como ser um Embaixador da Visão+.";
   $$("[data-whats-link]").forEach((a) => (a.href = waLink(genericMsg)));
+  $$("[data-emb-link]").forEach((a) => (a.href = waLink(embMsg)));
   $$("[data-whats-label]").forEach((el) => (el.textContent = CONFIG.whatsappLabel));
   $$("[data-insta-link]").forEach((a) => {
     if (!CONFIG.instagram) { a.closest("li").hidden = true; return; }
     a.href = `https://instagram.com/${CONFIG.instagram}`;
   });
   $$("[data-insta-label]").forEach((el) => (el.textContent = `@${CONFIG.instagram}`));
-  $$("[data-city-label]").forEach((el) => (el.textContent = CONFIG.regiao));
+  $$("[data-email-link]").forEach((a) => (a.href = `mailto:${CONFIG.email}`));
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 
   /* -------------------------------------------------------
