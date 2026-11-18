@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bar da Chapa — porções, lanches e futvôlei</title>
+<meta name="description" content="Bar com porções, lanches e cerveja gelada, com quadra de futvôlei na areia para alugar por hora e turmas de aula.">
+<meta name="theme-color" content="#1c1813">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #ece2cf;
+    --sand-2: #e2d5bc;
+    --ink: #1c1813;
+    --ink-2: #4a4237;
+    --line: #c9b99b;
+    --red: #d9432a;
+    --sea: #1f6f6b;
+    --cream: #f7f1e5;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--sand);
+    color: var(--ink);
+    font: 17px/1.55 'Instrument Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .display {
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    font-variation-settings: 'wdth' 75;
+    font-weight: 800;
+    line-height: .92;
+    letter-spacing: -.01em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  :focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+
+  .btn {
+    display: inline-block;
+    padding: 14px 22px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--ink);
+    background: var(--ink);
+    color: var(--cream);
+    transition: transform .15s;
+  }
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--red); }
+  .btn.ghost { background: transparent; color: var(--ink); }
+
+  /* ---------- topo ---------- */
+  header {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--ink);
+  }
+  .logo { font-size: 30px; text-decoration: none; }
+  .logo span { color: var(--red); }
+  header nav { display: flex; gap: 28px; font-weight: 500; }
+  header nav a { text-decoration: none; }
+  header nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  header .btn { padding: 10px 16px; font-size: 15px; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 56px;
+    padding: 64px 0 72px;
+    align-items: end;
+  }
+  .hero h1 { font-size: clamp(64px, 10.5vw, 148px); }
+  .hero h1 em { font-style: normal; color: var(--red); }
+  .hero p { font-size: 20px; max-width: 520px; margin: 28px 0 32px; color: var(--ink-2); }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .today {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 28px 28px 24px;
+  }
+  .today h2 { font-size: 34px; margin-bottom: 18px; }
+  .today h2 small {
+    display: block;
+    font: 500 14px 'Instrument Sans', sans-serif;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #b8ab94;
+    margin-top: 8px;
+  }
+  .today dl { margin: 0; }
+  .today .row {
+    display: flex; justify-content: space-between; gap: 16px;
+    padding: 12px 0;
+    border-top: 1px solid #3a332a;
+  }
+  .today dt { color: #b8ab94; }
+  .today dd { margin: 0; text-align: right; font-weight: 600; }
+  .today .free { color: #7fd1b9; }
+
+  /* ---------- faixa ---------- */
+  .strip {
+    background: var(--red);
+    color: var(--cream);
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+  .strip .wrap {
+    display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    padding-top: 14px; padding-bottom: 14px;
+    font-weight: 600;
+  }
+
+  /* ---------- cardápio ---------- */
+  .menu { padding: 96px 0 72px; }
+  .menu-head {
+    display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap;
+    margin-bottom: 56px;
+  }
+  .menu-head h2 { font-size: clamp(56px, 8vw, 104px); }
+  .menu-head p { max-width: 360px; margin: 0; color: var(--ink-2); }
+
+  .menu-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 56px;
+  }
+  .menu-cols h3 {
+    font-size: 36px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 8px;
+  }
+  .menu-cols ul { list-style: none; margin: 0; padding: 0; }
+  .menu-cols li { padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .item { display: flex; align-items: baseline; gap: 10px; font-weight: 600; }
+  .item .dots { flex: 1; border-bottom: 2px dotted var(--line); transform: translateY(-4px); }
+  .item .price { font-variant-numeric: tabular-nums; }
+  .menu-cols li p { margin: 4px 0 0; font-size: 15px; color: var(--ink-2); }
+  .tag {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 7px;
+    font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .06em;
+    background: var(--red); color: var(--cream);
+    vertical-align: 2px;
+  }
+  .menu-note { margin-top: 36px; font-size: 14px; color: var(--ink-2); }
+
+  /* ---------- quadra ---------- */
+  .court {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 96px 0;
+  }
+  .court-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .court h2 { font-size: clamp(56px, 8vw, 104px); }
+  .court h2 em { font-style: normal; color: #e9c46a; }
+  .court .lead { font-size: 19px; color: #cfc3ad; margin: 24px 0 40px; max-width: 480px; }
+
+  .prices { border-top: 1px solid #3a332a; }
+  .prices .row {
+    display: grid; grid-template-columns: 1fr auto; gap: 4px 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid #3a332a;
+  }
+  .prices strong { font-size: 18px; }
+  .prices .val {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: 'wdth' 75;
+    font-weight: 800; font-size: 32px; line-height: 1;
+    grid-row: span 2; align-self: center;
+  }
+  .prices .val small { font: 500 14px 'Instrument Sans', sans-serif; color: #b8ab94; }
+  .prices span { color: #b8ab94; font-size: 15px; }
+
+  .court-svg { width: 100%; height: auto; display: block; margin-bottom: 40px; }
+
+  .slots h3 { font-size: 30px; margin-bottom: 6px; }
+  .slots > p { margin: 0 0 18px; color: #b8ab94; font-size: 15px; }
+  .slot-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .slot {
+    display: block;
+    padding: 12px 8px;
+    text-align: center;
+    border: 1.5px solid #4a4237;
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+  }
+  .slot b { display: block; font-size: 18px; }
+  .slot small { font-size: 12px; color: #b8ab94; }
+  a.slot { border-color: #7fd1b9; }
+  a.slot small { color: #7fd1b9; }
+  a.slot:hover { background: #7fd1b9; color: var(--ink); }
+  a.slot:hover small { color: var(--ink); }
+  .slot.taken { opacity: .45; text-decoration: line-through; }
+
+  /* ---------- torneio ---------- */
+  .event { border-bottom: 2px solid var(--ink); }
+  .event .wrap {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 40px; align-items: center;
+    padding-top: 56px; padding-bottom: 56px;
+  }
+  .event .date {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-variation-settings: 'wdth' 75;
+    font-weight: 800; text-transform: uppercase;
+    line-height: .85; text-align: center;
+    color: var(--red);
+  }
+  .event .date b { display: block; font-size: 96px; }
+  .event .date span { font-size: 26px; }
+  .event h2 { font-size: clamp(36px, 4.5vw, 56px); margin-bottom: 10px; }
+  .event p { margin: 0; color: var(--ink-2); max-width: 560px; }
+
+  /* ---------- onde ---------- */
+  .where { padding: 88px 0; }
+  .where-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 48px; }
+  .where h2 { font-size: clamp(48px, 6vw, 80px); }
+  .where h3 {
+    font: 600 13px 'Instrument Sans', sans-serif;
+    text-transform: uppercase; letter-spacing: .08em;
+    color: var(--ink-2);
+    margin: 0 0 14px;
+  }
+  .hours { width: 100%; border-collapse: collapse; }
+  .hours td { padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  .hours td:last-child { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .where address { font-style: normal; font-size: 19px; line-height: 1.5; margin-bottom: 20px; }
+
+  footer {
+    border-top: 2px solid var(--ink);
+    padding: 24px 0 40px;
+    font-size: 14px; color: var(--ink-2);
+  }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  /* ---------- responsivo ---------- */
+  @media (max-width: 960px) {
+    header nav { display: none; }
+    .hero, .court-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 40px 0 48px; }
+    .menu-cols { grid-template-columns: 1fr; gap: 48px; }
+    .where-grid { grid-template-columns: 1fr; gap: 40px; }
+    .event .wrap { grid-template-columns: auto 1fr; }
+    .event .btn { grid-column: 1 / -1; justify-self: start; }
+  }
+  @media (max-width: 520px) {
+    .wrap { padding: 0 16px; }
+    body { font-size: 16px; }
+    .hero p { font-size: 18px; }
+    .menu, .court, .where { padding: 64px 0; }
+    .slot-list { grid-template-columns: repeat(3, 1fr); }
+    .event .wrap { gap: 24px; }
+    .event .date b { font-size: 72px; }
+    .strip .wrap { font-size: 14px; gap: 6px 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <a class="logo display" href="#">Bar da Chapa<span>.</span></a>
+    <nav aria-label="Principal">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#quadra">Quadra</a>
+      <a href="#torneio">Torneio</a>
+      <a href="#onde">Onde fica</a>
+    </nav>
+    <a class="btn" data-wa="Olá! Vim pelo site do Bar da Chapa." href="#">WhatsApp</a>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Porção na mesa, pé na <em>areia.</em></h1>
+      <p>Cerveja estupidamente gelada, porção que dá pra quatro e uma quadra de futvôlei iluminada até meia-noite. Chega pra jogar ou só pra assistir.</p>
+      <div class="actions">
+        <a class="btn" href="#cardapio">Ver o cardápio</a>
+        <a class="btn ghost" href="#quadra">Reservar a quadra</a>
+      </div>
+    </div>
+
+    <aside class="today" aria-label="Hoje no bar">
+      <h2>Hoje <small id="today-date">Terça-feira</small></h2>
+      <dl>
+        <div class="row"><dt>Bar</dt><dd>16h às 00h</dd></div>
+        <div class="row"><dt>Happy hour</dt><dd>2 long necks por R$ 20<br>até 19h</dd></div>
+        <div class="row"><dt>Quadra</dt><dd class="free">3 horários livres</dd></div>
+        <div class="row"><dt>Na chapa</dt><dd>Picanha fatiada</dd></div>
+      </dl>
+    </aside>
+  </section>
+</div>
+
+<div class="strip">
+  <div class="wrap">
+    <span>Ter a dom · 16h às 00h</span>
+    <span>Quadra com iluminação</span>
+    <span>Aulas para iniciantes</span>
+    <span>Torneio todo último sábado</span>
+  </div>
+</div>
+
+<main>
+  <section class="menu wrap" id="cardapio">
+    <div class="menu-head">
+      <h2>Cardápio</h2>
+      <p>Porções servem de 3 a 4 pessoas. Tudo feito na hora, então pede antes de entrar na quadra.</p>
+    </div>
+
+    <div class="menu-cols">
+      <div>
+        <h3>Porções</h3>
+        <ul>
+          <li><div class="item">Isca de tilápia <span class="dots"></span><span class="price">64</span></div><p>Empanada na farinha panko, com molho tártaro.</p></li>
+          <li><div class="item">Picanha na chapa <span class="tag">da casa</span><span class="dots"></span><span class="price">98</span></div><p>500 g, com cebola, mandioca frita e vinagrete.</p></li>
+          <li><div class="item">Frango a passarinho <span class="dots"></span><span class="price">52</span></div><p>Alho frito por cima, limão do lado.</p></li>
+          <li><div class="item">Calabresa acebolada <span class="dots"></span><span class="price">46</span></div></li>
+          <li><div class="item">Batata com cheddar e bacon <span class="dots"></span><span class="price">42</span></div></li>
+          <li><div class="item">Bolinho de bacalhau, 12 un. <span class="dots"></span><span class="price">58</span></div></li>
+          <li><div class="item">Mandioca frita <span class="dots"></span><span class="price">32</span></div></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Lanches</h3>
+        <ul>
+          <li><div class="item">X-Chapa <span class="tag">da casa</span><span class="dots"></span><span class="price">34</span></div><p>Burger de 180 g, queijo prato duplo, cebola caramelizada na chapa.</p></li>
+          <li><div class="item">Beirute de frango <span class="dots"></span><span class="price">36</span></div><p>No pão sírio, com catupiry e salada. Corta em 4.</p></li>
+          <li><div class="item">X-Salada <span class="dots"></span><span class="price">29</span></div></li>
+          <li><div class="item">Bauru <span class="dots"></span><span class="price">26</span></div></li>
+          <li><div class="item">Pão com linguiça <span class="dots"></span><span class="price">22</span></div></li>
+          <li><div class="item">Misto quente <span class="dots"></span><span class="price">16</span></div></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Bebidas</h3>
+        <ul>
+          <li><div class="item">Cerveja 600 ml <span class="dots"></span><span class="price">16</span></div><p>Original, Brahma ou Heineken (R$ 19).</p></li>
+          <li><div class="item">Balde com 5 long necks <span class="dots"></span><span class="price">55</span></div></li>
+          <li><div class="item">Long neck <span class="dots"></span><span class="price">12</span></div></li>
+          <li><div class="item">Caipirinha <span class="dots"></span><span class="price">24</span></div><p>Limão, maracujá ou morango. Com vodka, R$ 26.</p></li>
+          <li><div class="item">Água de coco <span class="dots"></span><span class="price">10</span></div></li>
+          <li><div class="item">Suco natural <span class="dots"></span><span class="price">12</span></div></li>
+          <li><div class="item">Refrigerante lata <span class="dots"></span><span class="price">7</span></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="menu-note">Preços em reais. Aceitamos Pix e cartão. Taxa de serviço opcional de 10%.</p>
+  </section>
+
+  <section class="court" id="quadra">
+    <div class="wrap court-grid">
+      <div>
+        <h2>Uma quadra.<br>Areia <em>fofa.</em></h2>
+        <p class="lead">Quadra oficial de 18 × 9 m, areia lavada e rede na altura certa. Aluga por hora, traz a dupla e o bar entrega a cerveja na beira da quadra.</p>
+
+        <div class="prices">
+          <div class="row"><strong>Aluguel de dia</strong><span class="val">70<small> /hora</small></span><span>Até 17h, com bola e rede</span></div>
+          <div class="row"><strong>Aluguel à noite</strong><span class="val">90<small> /hora</small></span><span>Com iluminação, das 17h às 00h</span></div>
+          <div class="row"><strong>Turma iniciante</strong><span class="val">160<small> /mês</small></span><span>2 aulas por semana, ter e qui às 7h ou 19h</span></div>
+          <div class="row"><strong>Aula avulsa</strong><span class="val">40</span><span>Pra experimentar antes de fechar o mês</span></div>
+        </div>
+      </div>
+
+      <div>
+        <svg class="court-svg" viewBox="0 0 400 230" role="img" aria-label="Desenho da quadra vista de cima: 18 metros de comprimento por 9 de largura, com a rede no meio">
+          <rect x="20" y="20" width="360" height="180" fill="#e2d5bc"/>
+          <rect x="20" y="20" width="360" height="180" fill="none" stroke="#f7f1e5" stroke-width="4"/>
+          <line x1="200" y1="8" x2="200" y2="212" stroke="#1c1813" stroke-width="4"/>
+          <circle cx="200" cy="8" r="5" fill="#d9432a"/>
+          <circle cx="200" cy="212" r="5" fill="#d9432a"/>
+          <circle cx="262" cy="84" r="9" fill="#e9c46a" stroke="#1c1813" stroke-width="2"/>
+          <text x="200" y="226" fill="#b8ab94" font-size="12" text-anchor="middle" font-family="Instrument Sans, sans-serif">18 m</text>
+          <text x="10" y="114" fill="#b8ab94" font-size="12" text-anchor="middle" font-family="Instrument Sans, sans-serif" transform="rotate(-90 10 110)">9 m</text>
+        </svg>
+
+        <div class="slots">
+          <h3>Horários de hoje</h3>
+          <p>Toca num horário livre pra reservar pelo WhatsApp.</p>
+          <div class="slot-list" id="slots"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="event" id="torneio">
+    <div class="wrap">
+      <div class="date"><b>28</b><span>novembro</span></div>
+      <div>
+        <h2>Torneio de duplas</h2>
+        <p>Todo último sábado do mês. Inscrição de R$ 60 por dupla, categorias iniciante e aberta. A dupla campeã leva R$ 500 e a rodada de cerveja fica por conta da casa.</p>
+      </div>
+      <a class="btn" data-wa="Quero inscrever minha dupla no torneio do Bar da Chapa." href="#">Inscrever dupla</a>
+    </div>
+  </section>
+
+  <section class="where wrap" id="onde">
+    <div class="where-grid">
+      <div>
+        <h2>Onde fica</h2>
+      </div>
+      <div>
+        <h3>Endereço</h3>
+        <address>Av. Beira-Rio, 1200<br>Ao lado do posto, entrada pela areia</address>
+        <a class="btn ghost" href="https://maps.google.com/?q=Av.+Beira-Rio+1200" target="_blank" rel="noopener">Abrir no mapa</a>
+      </div>
+      <div>
+        <h3>Horário</h3>
+        <table class="hours">
+          <tr><td>Segunda</td><td>Fechado</td></tr>
+          <tr><td>Terça a quinta</td><td>16h – 00h</td></tr>
+          <tr><td>Sexta</td><td>16h – 02h</td></tr>
+          <tr><td>Sábado</td><td>11h – 02h</td></tr>
+          <tr><td>Domingo</td><td>11h – 22h</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Bar da Chapa · Proibida a venda de bebidas alcoólicas para menores de 18 anos.</span>
+    <span>@bardachapa</span>
+  </div>
+</footer>
+
+<script>
+  // Número de WhatsApp de exemplo: troque pelo número real (DDI + DDD + número).
+  var WA = '5500000000000';
+  function waLink(msg) { return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg); }
+
+  document.querySelectorAll('[data-wa]').forEach(function (a) {
+    a.href = waLink(a.dataset.wa);
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+
+  var days = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+  document.getElementById('today-date').textContent = days[new Date().getDay()];
+
+  // Agenda de exemplo: true = reservado. Depois dá pra ligar numa planilha ou sistema de reservas.
+  var schedule = { 16: true, 17: false, 18: true, 19: true, 20: false, 21: true, 22: false, 23: true };
+  var box = document.getElementById('slots');
+  Object.keys(schedule).forEach(function (h) {
+    var taken = schedule[h];
+    var label = '<b>' + h + 'h</b><small>' + (taken ? 'reservado' : 'livre') + '</small>';
+    var el = document.createElement(taken ? 'div' : 'a');
+    el.className = 'slot' + (taken ? ' taken' : '');
+    el.innerHTML = label;
+    if (!taken) {
+      el.href = waLink('Oi! Quero reservar a quadra hoje às ' + h + 'h.');
+      el.target = '_blank';
+      el.rel = 'noopener';
+      el.setAttribute('aria-label', 'Reservar a quadra às ' + h + ' horas');
+    }
+    box.appendChild(el);
+  });
+</script>
+</body>
+</html>
